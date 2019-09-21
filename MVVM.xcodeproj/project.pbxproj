@@ -48,7 +48,7 @@
 		8474426323362C3D00496864 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426223362C3D00496864 /* UserDefaultsStorage.swift */; };
 		8474426523362F7000496864 /* MoviesUserDefaultsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426423362F7000496864 /* MoviesUserDefaultsDao.swift */; };
 		847442672336305100496864 /* UserDefaultsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442662336305100496864 /* UserDefaultsDao.swift */; };
-		8474426923365E6400496864 /* CoreData.md in Resources */ = {isa = PBXBuildFile; fileRef = 8474426823365E6400496864 /* CoreData.md */; };
+		8474426923365E6400496864 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8474426823365E6400496864 /* README.md */; };
 		8474426C2336608F00496864 /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426B2336608F00496864 /* MovieObject.swift */; };
 		8474426E233661DA00496864 /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426D233661DA00496864 /* CoreDataDao.swift */; };
 		847442702336630C00496864 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426F2336630C00496864 /* CoreDataStorage.swift */; };
@@ -130,7 +130,7 @@
 		8474426223362C3D00496864 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		8474426423362F7000496864 /* MoviesUserDefaultsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUserDefaultsDao.swift; sourceTree = "<group>"; };
 		847442662336305100496864 /* UserDefaultsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDao.swift; sourceTree = "<group>"; };
-		8474426823365E6400496864 /* CoreData.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CoreData.md; sourceTree = "<group>"; };
+		8474426823365E6400496864 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8474426B2336608F00496864 /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
 		8474426D233661DA00496864 /* CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
 		8474426F2336630C00496864 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 			children = (
 				8474426A2336605900496864 /* ManagedObjects */,
 				847441D7232F64E600496864 /* MVVM.xcdatamodeld */,
-				8474426823365E6400496864 /* CoreData.md */,
+				8474426823365E6400496864 /* README.md */,
 				8474426D233661DA00496864 /* CoreDataDao.swift */,
 				8474426F2336630C00496864 /* CoreDataStorage.swift */,
 				8474427423367BDC00496864 /* MoviesDao.swift */,
@@ -611,7 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847441E3232F64EB00496864 /* LaunchScreen.storyboard in Resources */,
-				8474426923365E6400496864 /* CoreData.md in Resources */,
+				8474426923365E6400496864 /* README.md in Resources */,
 				847441E0232F64EB00496864 /* Preview Assets.xcassets in Resources */,
 				847441DD232F64EB00496864 /* Assets.xcassets in Resources */,
 			);
