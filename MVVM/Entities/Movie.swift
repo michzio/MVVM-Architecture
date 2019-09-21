@@ -26,7 +26,7 @@ struct MoviesPage {
     
 }
 
-extension Movie : Decodable {
+extension Movie : Codable {
     
     private enum CodingKeys: String, CodingKey {
         case id
@@ -43,5 +43,23 @@ extension MoviesPage : Decodable {
         case page
         case totalPages = "total_pages"
         case results
+    }
+}
+
+extension Movie : Identifiable {
+    
+    var _identifier: String {
+        return "\(id)"
+    }
+}
+
+extension Movie : Hashable {
+    
+    static func == (lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

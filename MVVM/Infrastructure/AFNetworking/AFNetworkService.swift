@@ -11,16 +11,19 @@ import Alamofire
 
 public final class AFNetworkService {
     
-    private let decoder: JSONDecoder
     private let config: INetworkConfiguration
+    private let session: Session
     private let interceptor: RequestInterceptor?
+    private let decoder: JSONDecoder
          
-    init( decoder: JSONDecoder,
-          config: INetworkConfiguration,
-         interceptor: RequestInterceptor? = nil) {
-        self.decoder = decoder
+    init(config: INetworkConfiguration,
+         session: Session = Session.default,
+         interceptor: RequestInterceptor? = nil,
+         decoder: JSONDecoder = JSONDecoder()) {
         self.config = config
+        self.session = session
         self.interceptor = interceptor
+        self.decoder = decoder
     }
 }
 
@@ -34,9 +37,9 @@ extension AFNetworkService : INetworkService {
                
             let dataRequest : DataRequest
             if let interceptor = interceptor {
-                dataRequest = AF.request(urlRequest, interceptor: interceptor)
+                dataRequest = session.request(urlRequest, interceptor: interceptor)
             } else {
-                dataRequest = AFAuth.request(urlRequest)
+                dataRequest = session.request(urlRequest)
             }
                    
             dataRequest
@@ -81,9 +84,9 @@ extension AFNetworkService : INetworkService {
         
             let dataRequest : DataRequest
             if let interceptor = interceptor {
-                dataRequest = AF.request(urlRequest, interceptor: interceptor)
+                dataRequest = session.request(urlRequest, interceptor: interceptor)
             } else {
-                dataRequest = AFAuth.request(urlRequest)
+                dataRequest = session.request(urlRequest)
             }
             
             dataRequest

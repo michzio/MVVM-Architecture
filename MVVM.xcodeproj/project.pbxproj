@@ -40,6 +40,21 @@
 		8474424B2335194400496864 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474424A2335194400496864 /* NetworkServiceTests.swift */; };
 		8474424E23351AB200496864 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474424D23351AB200496864 /* NetworkSessionMock.swift */; };
 		8474425023351B6E00496864 /* NetworkConfigurationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474424F23351B6E00496864 /* NetworkConfigurationMock.swift */; };
+		8474425323360C2C00496864 /* AFNetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474425223360C2C00496864 /* AFNetworkServiceTests.swift */; };
+		8474425A233614C700496864 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84744259233614C700496864 /* URLProtocolMock.swift */; };
+		8474425D23361EFC00496864 /* LiveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474425C23361EFC00496864 /* LiveData.swift */; };
+		8474425F2336237C00496864 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474425E2336237C00496864 /* AppSettings.swift */; };
+		84744261233629FA00496864 /* IDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84744260233629FA00496864 /* IDao.swift */; };
+		8474426323362C3D00496864 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426223362C3D00496864 /* UserDefaultsStorage.swift */; };
+		8474426523362F7000496864 /* MoviesUserDefaultsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426423362F7000496864 /* MoviesUserDefaultsDao.swift */; };
+		847442672336305100496864 /* UserDefaultsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442662336305100496864 /* UserDefaultsDao.swift */; };
+		8474426923365E6400496864 /* CoreData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8474426823365E6400496864 /* CoreData.txt */; };
+		8474426C2336608F00496864 /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426B2336608F00496864 /* MovieObject.swift */; };
+		8474426E233661DA00496864 /* CoreDataDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426D233661DA00496864 /* CoreDataDao.swift */; };
+		847442702336630C00496864 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474426F2336630C00496864 /* CoreDataStorage.swift */; };
+		8474427323366D6500496864 /* KeyPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474427223366D6500496864 /* KeyPathExtensions.swift */; };
+		8474427523367BDC00496864 /* MoviesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474427423367BDC00496864 /* MoviesDao.swift */; };
+		8474427723367C8A00496864 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474427623367C8A00496864 /* Identifiable.swift */; };
 		AE13ACC1062E16B54054F7F0 /* Pods_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102F35CDC3A6C77D0A61AAE9 /* Pods_MVVMTests.framework */; };
 		BCCDE37281A089406CDA1CE6 /* Pods_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06A446540EC25C3115A69DB /* Pods_MVVM.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +122,21 @@
 		8474424A2335194400496864 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		8474424D23351AB200496864 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 		8474424F23351B6E00496864 /* NetworkConfigurationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurationMock.swift; sourceTree = "<group>"; };
+		8474425223360C2C00496864 /* AFNetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFNetworkServiceTests.swift; sourceTree = "<group>"; };
+		84744259233614C700496864 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		8474425C23361EFC00496864 /* LiveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveData.swift; sourceTree = "<group>"; };
+		8474425E2336237C00496864 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		84744260233629FA00496864 /* IDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDao.swift; sourceTree = "<group>"; };
+		8474426223362C3D00496864 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		8474426423362F7000496864 /* MoviesUserDefaultsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUserDefaultsDao.swift; sourceTree = "<group>"; };
+		847442662336305100496864 /* UserDefaultsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDao.swift; sourceTree = "<group>"; };
+		8474426823365E6400496864 /* CoreData.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CoreData.txt; sourceTree = "<group>"; };
+		8474426B2336608F00496864 /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
+		8474426D233661DA00496864 /* CoreDataDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDao.swift; sourceTree = "<group>"; };
+		8474426F2336630C00496864 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		8474427223366D6500496864 /* KeyPathExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathExtensions.swift; sourceTree = "<group>"; };
+		8474427423367BDC00496864 /* MoviesDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDao.swift; sourceTree = "<group>"; };
+		8474427623367C8A00496864 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		875ED74388051B6F15649EB4 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 		B06A446540EC25C3115A69DB /* Pods_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -227,6 +257,7 @@
 				847441DC232F64EB00496864 /* Assets.xcassets */,
 				847441D3232F64E600496864 /* AppDelegate.swift */,
 				847441D5232F64E600496864 /* SceneDelegate.swift */,
+				8474425E2336237C00496864 /* AppSettings.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -287,7 +318,12 @@
 		8474420D232F672100496864 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				8474426A2336605900496864 /* ManagedObjects */,
 				847441D7232F64E600496864 /* MVVM.xcdatamodeld */,
+				8474426823365E6400496864 /* CoreData.txt */,
+				8474426D233661DA00496864 /* CoreDataDao.swift */,
+				8474426F2336630C00496864 /* CoreDataStorage.swift */,
+				8474427423367BDC00496864 /* MoviesDao.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -320,6 +356,8 @@
 		8474422B2332C02200496864 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8474427123366D4C00496864 /* KeyPaths */,
+				8474425B23361EE300496864 /* Observable */,
 				8474422C2332C02D00496864 /* Cancellable.swift */,
 			);
 			path = Common;
@@ -352,6 +390,9 @@
 		84744237233352B200496864 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				8474426223362C3D00496864 /* UserDefaultsStorage.swift */,
+				847442662336305100496864 /* UserDefaultsDao.swift */,
+				8474426423362F7000496864 /* MoviesUserDefaultsDao.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -376,6 +417,8 @@
 			isa = PBXGroup;
 			children = (
 				8474424423335CE700496864 /* IMoviesDao.swift */,
+				84744260233629FA00496864 /* IDao.swift */,
+				8474427623367C8A00496864 /* Identifiable.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -383,6 +426,7 @@
 		847442482335188D00496864 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				8474425123360C1300496864 /* AFNetworking */,
 				847442492335189500496864 /* Networking */,
 			);
 			path = Infrastructure;
@@ -404,6 +448,47 @@
 				8474424F23351B6E00496864 /* NetworkConfigurationMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8474425123360C1300496864 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				84744258233614B500496864 /* Mocks */,
+				8474425223360C2C00496864 /* AFNetworkServiceTests.swift */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		84744258233614B500496864 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				84744259233614C700496864 /* URLProtocolMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8474425B23361EE300496864 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				8474425C23361EFC00496864 /* LiveData.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		8474426A2336605900496864 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				8474426B2336608F00496864 /* MovieObject.swift */,
+			);
+			path = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		8474427123366D4C00496864 /* KeyPaths */ = {
+			isa = PBXGroup;
+			children = (
+				8474427223366D6500496864 /* KeyPathExtensions.swift */,
+			);
+			path = KeyPaths;
 			sourceTree = "<group>";
 		};
 		C7254BD67ACD0DD58208BF00 /* Frameworks */ = {
@@ -526,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				847441E3232F64EB00496864 /* LaunchScreen.storyboard in Resources */,
+				8474426923365E6400496864 /* CoreData.txt in Resources */,
 				847441E0232F64EB00496864 /* Preview Assets.xcassets in Resources */,
 				847441DD232F64EB00496864 /* Assets.xcassets in Resources */,
 			);
@@ -655,27 +741,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8474425F2336237C00496864 /* AppSettings.swift in Sources */,
 				8474422D2332C02D00496864 /* Cancellable.swift in Sources */,
 				84744216232F6C1500496864 /* Endpoint.swift in Sources */,
+				8474426E233661DA00496864 /* CoreDataDao.swift in Sources */,
 				8474421A2330062F00496864 /* NetworkSession.swift in Sources */,
+				84744261233629FA00496864 /* IDao.swift in Sources */,
+				847442702336630C00496864 /* CoreDataStorage.swift in Sources */,
 				847441D4232F64E600496864 /* AppDelegate.swift in Sources */,
 				84744210232F675F00496864 /* MoviesRepository.swift in Sources */,
 				847442202330AF1E00496864 /* AFAuth.swift in Sources */,
+				8474427323366D6500496864 /* KeyPathExtensions.swift in Sources */,
+				8474426323362C3D00496864 /* UserDefaultsStorage.swift in Sources */,
 				84744212232F689300496864 /* MoviesService.swift in Sources */,
+				8474427723367C8A00496864 /* Identifiable.swift in Sources */,
 				847441D6232F64E600496864 /* SceneDelegate.swift in Sources */,
 				8474422A2332BE0000496864 /* IJsonNetworkService.swift in Sources */,
 				84744218232F6E8300496864 /* NetworkConfiguration.swift in Sources */,
 				847442352332CB7500496864 /* IMoviesService.swift in Sources */,
+				8474425D23361EFC00496864 /* LiveData.swift in Sources */,
+				847442672336305100496864 /* UserDefaultsDao.swift in Sources */,
 				847441DB232F64E600496864 /* ContentView.swift in Sources */,
 				847441D9232F64E600496864 /* MVVM.xcdatamodeld in Sources */,
 				847442322332C65C00496864 /* Router.swift in Sources */,
 				847442282332BD2200496864 /* IPromiseNetworkService.swift in Sources */,
+				8474426523362F7000496864 /* MoviesUserDefaultsDao.swift in Sources */,
 				847442222330B01C00496864 /* AuthRequestInterceptor.swift in Sources */,
 				8474424523335CE700496864 /* IMoviesDao.swift in Sources */,
 				8474422F2332C46300496864 /* Endpoints.swift in Sources */,
 				847442262330BC8400496864 /* AFNetworkService.swift in Sources */,
 				847442242330B25F00496864 /* AFRouter.swift in Sources */,
 				84744214232F6AD400496864 /* NetworkService.swift in Sources */,
+				8474426C2336608F00496864 /* MovieObject.swift in Sources */,
+				8474427523367BDC00496864 /* MoviesDao.swift in Sources */,
 				8474423A2333532E00496864 /* Movie.swift in Sources */,
 				8474423F233357F200496864 /* IMoviesRepository.swift in Sources */,
 				8474421C2330075100496864 /* NetworkLogger.swift in Sources */,
@@ -686,6 +784,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8474425323360C2C00496864 /* AFNetworkServiceTests.swift in Sources */,
+				8474425A233614C700496864 /* URLProtocolMock.swift in Sources */,
 				8474424B2335194400496864 /* NetworkServiceTests.swift in Sources */,
 				8474425023351B6E00496864 /* NetworkConfigurationMock.swift in Sources */,
 				8474424E23351AB200496864 /* NetworkSessionMock.swift in Sources */,
