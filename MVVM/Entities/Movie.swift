@@ -18,8 +18,10 @@ struct Movie {
 }
 
 
-struct MoviesPage {
-        
+struct MoviesQuery {
+    
+    var query: String?
+    
     let page: Int
     let totalPages: Int
     let results: [Movie]
@@ -37,7 +39,7 @@ extension Movie : Codable {
     }
 }
 
-extension MoviesPage : Decodable {
+extension MoviesQuery : Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case page
@@ -61,5 +63,12 @@ extension Movie : Hashable {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+}
+
+extension MoviesQuery : Identifiable {
+    
+    var _identifier: String {
+        return "\(page)-\(query ?? "")"
     }
 }

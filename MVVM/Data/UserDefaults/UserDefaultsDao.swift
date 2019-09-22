@@ -14,7 +14,7 @@ class UserDefaultsDao<T : UserDefaultsStorable> : IDao {
     
     let storage = UserDefaultsStorage<Entity>()
    
-    func insert(e: Entity, completion: @escaping (Result<Entity, Error>) -> Void) {
+    func insert(_ e: Entity, completion: @escaping (Result<Entity, Error>) -> Void) {
         
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else { return }
@@ -31,7 +31,7 @@ class UserDefaultsDao<T : UserDefaultsStorable> : IDao {
         }
     }
     
-    func insertReplacing(e: T, completion: @escaping (Result<T, Error>) -> Void) {
+    func insertReplacing(_ e: T, completion: @escaping (Result<T, Error>) -> Void) {
         
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else { return }
@@ -46,7 +46,7 @@ class UserDefaultsDao<T : UserDefaultsStorable> : IDao {
         }
     }
        
-    func delete(e: Entity, completion: @escaping (Result<Int, Error>) -> Void) {
+    func delete(_ e: Entity, completion: @escaping (Result<Int, Error>) -> Void) {
         
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else { return }
@@ -62,7 +62,7 @@ class UserDefaultsDao<T : UserDefaultsStorable> : IDao {
         
     }
        
-    func update(e: Entity, completion: @escaping (Result<Entity, Error>) -> Void) {
+    func update(_ e: Entity, completion: @escaping (Result<Entity, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else { return }
             

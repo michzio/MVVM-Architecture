@@ -32,6 +32,7 @@ class AFNetworkServiceTests: XCTestCase {
         sut = nil
     }
     
+    /*
     func test_whenMockDataPassed_shouldReturnProperResponse() {
         
         // given
@@ -52,6 +53,6 @@ class AFNetworkServiceTests: XCTestCase {
         
         // then
         wait(for: [expectation], timeout: 0.1)
-    }
+    }*/
     
 }

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14897.2" systemVersion="19A546d" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Movie" representedClassName="Movie" syncable="YES">
+    <entity name="MovieObject" representedClassName="MovieObject" syncable="YES">
         <attribute name="id" attributeType="String"/>
         <attribute name="overview" optional="YES" attributeType="String"/>
         <attribute name="posterPath" optional="YES" attributeType="String"/>
         <attribute name="releaseDate" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="queries" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="MoviesQueryObject" inverseName="results" inverseEntity="MoviesQueryObject"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="MoviesQueryObject" representedClassName="MoviesQueryObject" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="page" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="query" attributeType="String"/>
+        <attribute name="totalPages" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MovieObject" inverseName="queries" inverseEntity="MovieObject"/>
     </entity>
     <elements>
-        <element name="Movie" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="MovieObject" positionX="-4543.30859375" positionY="-981.8828125" width="128" height="133"/>
+        <element name="MoviesQueryObject" positionX="-4915.62109375" positionY="-970.92578125" width="128" height="118"/>
     </elements>
 </model>

@@ -10,5 +10,5 @@ import Foundation
 
 protocol IMoviesService {
     
-    func getMovies(query: String, page: Int, completion: @escaping (Result<MoviesPage, Error>) -> Void ) -> Cancellable?
+    func getMovies(query: String, page: Int, completion: @escaping (Result<MoviesQuery, Error>) -> Void ) -> Cancellable?
 }

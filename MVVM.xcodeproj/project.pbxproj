@@ -55,6 +55,14 @@
 		8474427323366D6500496864 /* KeyPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474427223366D6500496864 /* KeyPathExtensions.swift */; };
 		8474427523367BDC00496864 /* MoviesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474427423367BDC00496864 /* MoviesDao.swift */; };
 		8474427723367C8A00496864 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474427623367C8A00496864 /* Identifiable.swift */; };
+		8474427A233771DE00496864 /* ICoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84744279233771DE00496864 /* ICoreDataStorage.swift */; };
+		84744280233772B100496864 /* InMemoryCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474427F233772B000496864 /* InMemoryCoreDataStorage.swift */; };
+		8474428323377DDA00496864 /* ObjectMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474428223377DDA00496864 /* ObjectMapping.swift */; };
+		847442852337813100496864 /* MoviesDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442842337813100496864 /* MoviesDaoTests.swift */; };
+		8474428C2337E4C900496864 /* IMoviesQueryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474428B2337E4C900496864 /* IMoviesQueryDao.swift */; };
+		8474428E2337E53000496864 /* MoviesQueryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474428D2337E53000496864 /* MoviesQueryDao.swift */; };
+		84744290233800C000496864 /* MoviesQueryObject+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474428F233800C000496864 /* MoviesQueryObject+Mapping.swift */; };
+		847442942338191700496864 /* MoviesQueryDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442932338191700496864 /* MoviesQueryDaoTests.swift */; };
 		AE13ACC1062E16B54054F7F0 /* Pods_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102F35CDC3A6C77D0A61AAE9 /* Pods_MVVMTests.framework */; };
 		BCCDE37281A089406CDA1CE6 /* Pods_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06A446540EC25C3115A69DB /* Pods_MVVM.framework */; };
 /* End PBXBuildFile section */
@@ -137,6 +145,14 @@
 		8474427223366D6500496864 /* KeyPathExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathExtensions.swift; sourceTree = "<group>"; };
 		8474427423367BDC00496864 /* MoviesDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDao.swift; sourceTree = "<group>"; };
 		8474427623367C8A00496864 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		84744279233771DE00496864 /* ICoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICoreDataStorage.swift; sourceTree = "<group>"; };
+		8474427F233772B000496864 /* InMemoryCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCoreDataStorage.swift; sourceTree = "<group>"; };
+		8474428223377DDA00496864 /* ObjectMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapping.swift; sourceTree = "<group>"; };
+		847442842337813100496864 /* MoviesDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDaoTests.swift; sourceTree = "<group>"; };
+		8474428B2337E4C900496864 /* IMoviesQueryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMoviesQueryDao.swift; sourceTree = "<group>"; };
+		8474428D2337E53000496864 /* MoviesQueryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesQueryDao.swift; sourceTree = "<group>"; };
+		8474428F233800C000496864 /* MoviesQueryObject+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesQueryObject+Mapping.swift"; sourceTree = "<group>"; };
+		847442932338191700496864 /* MoviesQueryDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesQueryDaoTests.swift; sourceTree = "<group>"; };
 		875ED74388051B6F15649EB4 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 		B06A446540EC25C3115A69DB /* Pods_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -233,6 +249,7 @@
 		847441EC232F64EB00496864 /* MVVMTests */ = {
 			isa = PBXGroup;
 			children = (
+				8474427B2337727900496864 /* Data */,
 				847442482335188D00496864 /* Infrastructure */,
 				847441ED232F64EB00496864 /* MVVMTests.swift */,
 				847441EF232F64EB00496864 /* Info.plist */,
@@ -318,12 +335,14 @@
 		8474420D232F672100496864 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				84744278233771C700496864 /* Interfaces */,
 				8474426A2336605900496864 /* ManagedObjects */,
 				847441D7232F64E600496864 /* MVVM.xcdatamodeld */,
 				8474426823365E6400496864 /* README.md */,
 				8474426D233661DA00496864 /* CoreDataDao.swift */,
 				8474426F2336630C00496864 /* CoreDataStorage.swift */,
 				8474427423367BDC00496864 /* MoviesDao.swift */,
+				8474428D2337E53000496864 /* MoviesQueryDao.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -356,6 +375,7 @@
 		8474422B2332C02200496864 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8474428123377DC600496864 /* Extensions */,
 				8474427123366D4C00496864 /* KeyPaths */,
 				8474425B23361EE300496864 /* Observable */,
 				8474422C2332C02D00496864 /* Cancellable.swift */,
@@ -419,6 +439,7 @@
 				8474424423335CE700496864 /* IMoviesDao.swift */,
 				84744260233629FA00496864 /* IDao.swift */,
 				8474427623367C8A00496864 /* Identifiable.swift */,
+				8474428B2337E4C900496864 /* IMoviesQueryDao.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -479,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				8474426B2336608F00496864 /* MovieObject.swift */,
+				8474428F233800C000496864 /* MoviesQueryObject+Mapping.swift */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -489,6 +511,48 @@
 				8474427223366D6500496864 /* KeyPathExtensions.swift */,
 			);
 			path = KeyPaths;
+			sourceTree = "<group>";
+		};
+		84744278233771C700496864 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				84744279233771DE00496864 /* ICoreDataStorage.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		8474427B2337727900496864 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8474427C2337728100496864 /* CoreData */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8474427C2337728100496864 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8474427D2337728900496864 /* Mocks */,
+				847442842337813100496864 /* MoviesDaoTests.swift */,
+				847442932338191700496864 /* MoviesQueryDaoTests.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8474427D2337728900496864 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8474427F233772B000496864 /* InMemoryCoreDataStorage.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8474428123377DC600496864 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8474428223377DDA00496864 /* ObjectMapping.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C7254BD67ACD0DD58208BF00 /* Frameworks */ = {
@@ -744,6 +808,7 @@
 				8474425F2336237C00496864 /* AppSettings.swift in Sources */,
 				8474422D2332C02D00496864 /* Cancellable.swift in Sources */,
 				84744216232F6C1500496864 /* Endpoint.swift in Sources */,
+				8474428323377DDA00496864 /* ObjectMapping.swift in Sources */,
 				8474426E233661DA00496864 /* CoreDataDao.swift in Sources */,
 				8474421A2330062F00496864 /* NetworkSession.swift in Sources */,
 				84744261233629FA00496864 /* IDao.swift in Sources */,
@@ -754,6 +819,10 @@
 				8474427323366D6500496864 /* KeyPathExtensions.swift in Sources */,
 				8474426323362C3D00496864 /* UserDefaultsStorage.swift in Sources */,
 				84744212232F689300496864 /* MoviesService.swift in Sources */,
+				84744290233800C000496864 /* MoviesQueryObject+Mapping.swift in Sources */,
+				8474427A233771DE00496864 /* ICoreDataStorage.swift in Sources */,
+				8474428C2337E4C900496864 /* IMoviesQueryDao.swift in Sources */,
+				8474428E2337E53000496864 /* MoviesQueryDao.swift in Sources */,
 				8474427723367C8A00496864 /* Identifiable.swift in Sources */,
 				847441D6232F64E600496864 /* SceneDelegate.swift in Sources */,
 				8474422A2332BE0000496864 /* IJsonNetworkService.swift in Sources */,
@@ -785,9 +854,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8474425323360C2C00496864 /* AFNetworkServiceTests.swift in Sources */,
+				847442852337813100496864 /* MoviesDaoTests.swift in Sources */,
+				847442942338191700496864 /* MoviesQueryDaoTests.swift in Sources */,
 				8474425A233614C700496864 /* URLProtocolMock.swift in Sources */,
 				8474424B2335194400496864 /* NetworkServiceTests.swift in Sources */,
 				8474425023351B6E00496864 /* NetworkConfigurationMock.swift in Sources */,
+				84744280233772B100496864 /* InMemoryCoreDataStorage.swift in Sources */,
 				8474424E23351AB200496864 /* NetworkSessionMock.swift in Sources */,
 				847441EE232F64EB00496864 /* MVVMTests.swift in Sources */,
 			);
@@ -989,6 +1061,8 @@
 			baseConfigurationReference = 1F18EB7A27B99215FE722600 /* Pods-MVVMTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				API_BASE_URL = "http://api.themoviedb.org";
+				API_KEY = 2696829a81b1b5827d515ff121700838;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPA39TCVSP;
@@ -1012,6 +1086,8 @@
 			baseConfigurationReference = 54D7DB8B88BA474B70C53CC2 /* Pods-MVVMTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				API_BASE_URL = "http://api.themoviedb.org";
+				API_KEY = 2696829a81b1b5827d515ff121700838;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HPA39TCVSP;

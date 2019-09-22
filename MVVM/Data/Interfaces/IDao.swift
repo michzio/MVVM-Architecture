@@ -16,10 +16,10 @@ enum DaoError : Error {
 protocol IDao {
     associatedtype Entity
     
-    func insert(e: Entity, completion: @escaping (Result<Entity, Error>) -> Void)
-    func insertReplacing(e: Entity, completion: @escaping (Result<Entity, Error>) -> Void)
-    func delete(e: Entity, completion: @escaping (Result<Int, Error>) -> Void)
-    func update(e: Entity, completion: @escaping (Result<Entity, Error>) -> Void)
+    func insert(_ e: Entity, completion: @escaping (Result<Entity, Error>) -> Void)
+    func insertReplacing(_ e: Entity, completion: @escaping (Result<Entity, Error>) -> Void)
+    func delete(_ e: Entity, completion: @escaping (Result<Int, Error>) -> Void)
+    func update(_ e: Entity, completion: @escaping (Result<Entity, Error>) -> Void)
     func load(id: String, completion: @escaping (Result<Entity, Error>) -> Void)
     func loadAll(completion: @escaping (Result<[Entity], Error>) -> Void)
 }

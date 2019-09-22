@@ -1,18 +1,17 @@
 //
-//  CoreDataStack.swift
-//  MVVM
+//  InMemoryCoreDataStorage.swift
+//  MVVMTests
 //
-//  Created by Michal Ziobro on 21/09/2019.
+//  Created by Michal Ziobro on 22/09/2019.
 //  Copyright © 2019 Michal Ziobro. All rights reserved.
 //
 
 import CoreData
+import MVVM
 
-class CoreDataStorage : ICoreDataStorage {
+class InMemoryCoreDataStorage : ICoreDataStorage {
     
-    static let shared = CoreDataStorage()
-    
-    private init() {}
+    static let sharedName : String = "InMemoryShared.sqlite"
     
     // MARK: - Core Data stack
 
@@ -23,7 +22,17 @@ class CoreDataStorage : ICoreDataStorage {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
+        // let container = NSPersistentCloudKitContainer(name: "MVVM")
+        
+        let storeURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent(InMemoryCoreDataStorage.sharedName)
+        try? FileManager().removeItem(at: storeURL)
+        
+        let description = NSPersistentStoreDescription()
+        description.type = NSInMemoryStoreType
+        description.url = storeURL
+        
         let container = NSPersistentContainer(name: "MVVM")
+        container.persistentStoreDescriptions = [description]
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

@@ -20,16 +20,17 @@ public final class MoviesService {
 
 extension MoviesService : IMoviesService {
     
-    func getMovies(query: String, page: Int, completion: @escaping (Result<MoviesPage, Error>) -> Void) -> Cancellable? {
+    func getMovies(query: String, page: Int, completion: @escaping (Result<MoviesQuery, Error>) -> Void) -> Cancellable? {
         
         let requestable = Router.movies(query: query, page: page)
         //let requestable = Endpoints.movies(query: query, page: page)
         
-        return networkService.request(with: requestable, queue: .main) { (result : Result<MoviesPage, Error>) in
+        return networkService.request(with: requestable, queue: .main) { (result : Result<MoviesQuery, Error>) in
             
             switch result {
-            case .success(let moviesPage):
-                completion(.success(moviesPage))
+            case .success(var moviesQuery):
+                moviesQuery.query = query 
+                completion(.success(moviesQuery))
             case .failure(let error):
                 completion(.failure(error))
             }

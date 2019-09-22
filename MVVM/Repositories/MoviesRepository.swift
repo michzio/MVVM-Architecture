@@ -12,29 +12,44 @@ import RxSwift
 final class MoviesRepository {
     
     private let moviesService : IMoviesService
-    private let moviesDao : IMoviesDao
+    private let moviesQueryDao : IMoviesQueryDao
     
-    init(service: IMoviesService, dao: IMoviesDao) {
+    init(service: IMoviesService, dao: IMoviesQueryDao) {
         self.moviesService = service
-        self.moviesDao = dao
+        self.moviesQueryDao = dao
     }
 }
 
 extension MoviesRepository: IMoviesRepository {
     
-    func getMovies(query: String, page: Int) -> Observable<MoviesPage> {
+    func getMovies(query: String, page: Int) -> Observable<[Movie]> {
         
-        let subject = PublishSubject<MoviesPage>()
+        let subject = PublishSubject<[Movie]>()
     
         // Cached Local Storage
-        
+        moviesQueryDao.load(query: query, page: page) { result in
+            switch result {
+            case .success(let moviesQuery):
+                subject.onNext(moviesQuery.results)
+            case .failure:
+                subject.onNext([])
+            }
+        }
         
         // Remote API
-        _ = moviesService.getMovies(query: query, page: page) { (result) in
-            
+        _ = moviesService.getMovies(query: query, page: page) { [weak self] (result) in
+            guard let self = self else { return }
+        
             switch result {
-            case .success(let movies):
-                subject.onNext(movies)
+            case .success(let moviesQuery):
+                self.moviesQueryDao.sync(moviesQuery: moviesQuery) { result in
+                    switch result {
+                    case .success(let moviesQuery):
+                        subject.onNext(moviesQuery.results)
+                    case .failure(let error):
+                        subject.onError(error)
+                    }
+                }
             case .failure(let error):
                 subject.onError(error)
             }

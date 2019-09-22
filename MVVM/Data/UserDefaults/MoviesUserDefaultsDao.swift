@@ -24,4 +24,8 @@ class MoviesUserDefaultsDao : UserDefaultsDao<Movie>, IMoviesDao {
             completion(.success(filtered))
         }
     }
+    
+    func sync(movies: [Movie], completion: @escaping (Result<Bool, Error>) -> Void) {
+        // TODO: 
+    }
 }

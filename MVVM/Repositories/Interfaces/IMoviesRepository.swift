@@ -11,5 +11,5 @@ import RxSwift
 
 protocol IMoviesRepository {
     
-    func getMovies(query: String, page: Int) -> Observable<MoviesPage>
+    func getMovies(query: String, page: Int) -> Observable<[Movie]>
 }
