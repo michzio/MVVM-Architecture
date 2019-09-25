@@ -11,15 +11,15 @@ import SwiftyJSON
 
 public protocol IJsonNetworkService {
     
-    @discardableResult
-     func request(with endpoint: Requestable, queue: DispatchQueue, completion: @escaping (Swift.Result<JSON, Error>) -> Void)
+     @discardableResult
+     func request(with endpoint: Requestable, queue: DispatchQueue, completion: @escaping (Swift.Result<JSON, Error>) -> Void) -> Cancellable?
 }
 
 extension IJsonNetworkService where Self : INetworkService {
     
-    public func request(with endpoint: Requestable, queue: DispatchQueue = .main, completion: @escaping (Swift.Result<JSON, Error>) -> Void) {
+    public func request(with endpoint: Requestable, queue: DispatchQueue = .main, completion: @escaping (Swift.Result<JSON, Error>) -> Void) -> Cancellable? {
           
-          request(with: endpoint, queue: queue) { (result : Swift.Result<Data, Error>) in
+          return request(with: endpoint, queue: queue) { (result : Swift.Result<Data, Error>) in
               
               switch result {
               case .success(let data):

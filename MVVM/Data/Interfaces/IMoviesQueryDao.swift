@@ -11,6 +11,7 @@ import Foundation
 protocol IMoviesQueryDao {
     
     func load(query: String, page: Int, completion: @escaping (Result<MoviesQuery, Error>) -> Void)
+    func recent(number: Int, completion: @escaping (Result<[MoviesQuery], Error>) -> Void)
     func sync(moviesQuery: MoviesQuery, completion: @escaping (Result<MoviesQuery, Error>) -> Void)
     
     // IDao

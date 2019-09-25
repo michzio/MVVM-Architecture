@@ -15,7 +15,7 @@ class AuthRequestInterceptor : RequestInterceptor {
         
         print("Request Adapter: \(urlRequest)")
         
-        var urlRequest = urlRequest
+        let urlRequest = urlRequest
         //urlRequest.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
         
         completion(.success(urlRequest))

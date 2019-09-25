@@ -6,22 +6,53 @@
         <attribute name="posterPath" optional="YES" attributeType="String"/>
         <attribute name="releaseDate" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PosterImageObject" inverseName="movie" inverseEntity="PosterImageObject"/>
         <relationship name="queries" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="MoviesQueryObject" inverseName="results" inverseEntity="MoviesQueryObject"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
             </uniquenessConstraint>
+            <uniquenessConstraint>
+                <constraint value="posterPath"/>
+            </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
     <entity name="MoviesQueryObject" representedClassName="MoviesQueryObject" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="page" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="query" attributeType="String"/>
         <attribute name="totalPages" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MovieObject" inverseName="queries" inverseEntity="MovieObject"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+            <uniquenessConstraint>
+                <constraint value="query"/>
+                <constraint value="page"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PosterImageObject" representedClassName="PosterImageObject" syncable="YES" codeGenerationType="class">
+        <attribute name="data" attributeType="Binary"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="path" attributeType="String"/>
+        <attribute name="width" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MovieObject" inverseName="images" inverseEntity="MovieObject"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="path"/>
+                <constraint value="width"/>
+            </uniquenessConstraint>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="MovieObject" positionX="-4543.30859375" positionY="-981.8828125" width="128" height="133"/>
-        <element name="MoviesQueryObject" positionX="-4915.62109375" positionY="-970.92578125" width="128" height="118"/>
+        <element name="MovieObject" positionX="-4543.30859375" positionY="-981.8828125" width="128" height="148"/>
+        <element name="MoviesQueryObject" positionX="-4915.62109375" positionY="-970.92578125" width="128" height="133"/>
+        <element name="PosterImageObject" positionX="-4371.9609375" positionY="-812.0625" width="128" height="118"/>
     </elements>
 </model>

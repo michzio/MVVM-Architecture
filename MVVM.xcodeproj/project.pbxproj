@@ -63,6 +63,14 @@
 		8474428E2337E53000496864 /* MoviesQueryDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474428D2337E53000496864 /* MoviesQueryDao.swift */; };
 		84744290233800C000496864 /* MoviesQueryObject+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474428F233800C000496864 /* MoviesQueryObject+Mapping.swift */; };
 		847442942338191700496864 /* MoviesQueryDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442932338191700496864 /* MoviesQueryDaoTests.swift */; };
+		84744297233B449900496864 /* PosterImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84744296233B449900496864 /* PosterImageRepository.swift */; };
+		84744299233B453C00496864 /* IPosterImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84744298233B453C00496864 /* IPosterImagesRepository.swift */; };
+		8474429B233B45E800496864 /* IPosterImagesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474429A233B45E800496864 /* IPosterImagesDao.swift */; };
+		8474429D233B471200496864 /* PosterImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474429C233B471200496864 /* PosterImage.swift */; };
+		8474429F233B493D00496864 /* IPosterImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474429E233B493D00496864 /* IPosterImagesService.swift */; };
+		847442A1233B498400496864 /* PosterImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A0233B498400496864 /* PosterImagesService.swift */; };
+		847442A3233BFF6A00496864 /* PosterImageObject+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A2233BFF6A00496864 /* PosterImageObject+Mapping.swift */; };
+		847442A5233C01F400496864 /* PosterImagesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A4233C01F400496864 /* PosterImagesDao.swift */; };
 		AE13ACC1062E16B54054F7F0 /* Pods_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102F35CDC3A6C77D0A61AAE9 /* Pods_MVVMTests.framework */; };
 		BCCDE37281A089406CDA1CE6 /* Pods_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06A446540EC25C3115A69DB /* Pods_MVVM.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +161,14 @@
 		8474428D2337E53000496864 /* MoviesQueryDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesQueryDao.swift; sourceTree = "<group>"; };
 		8474428F233800C000496864 /* MoviesQueryObject+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesQueryObject+Mapping.swift"; sourceTree = "<group>"; };
 		847442932338191700496864 /* MoviesQueryDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesQueryDaoTests.swift; sourceTree = "<group>"; };
+		84744296233B449900496864 /* PosterImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageRepository.swift; sourceTree = "<group>"; };
+		84744298233B453C00496864 /* IPosterImagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPosterImagesRepository.swift; sourceTree = "<group>"; };
+		8474429A233B45E800496864 /* IPosterImagesDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPosterImagesDao.swift; sourceTree = "<group>"; };
+		8474429C233B471200496864 /* PosterImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImage.swift; sourceTree = "<group>"; };
+		8474429E233B493D00496864 /* IPosterImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPosterImagesService.swift; sourceTree = "<group>"; };
+		847442A0233B498400496864 /* PosterImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesService.swift; sourceTree = "<group>"; };
+		847442A2233BFF6A00496864 /* PosterImageObject+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PosterImageObject+Mapping.swift"; sourceTree = "<group>"; };
+		847442A4233C01F400496864 /* PosterImagesDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesDao.swift; sourceTree = "<group>"; };
 		875ED74388051B6F15649EB4 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 		B06A446540EC25C3115A69DB /* Pods_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -232,7 +248,6 @@
 				84744208232F667200496864 /* ViewModels */,
 				84744207232F665900496864 /* Views */,
 				84744206232F662800496864 /* Supporting Files */,
-				847441DA232F64E600496864 /* ContentView.swift */,
 				847441DE232F64EB00496864 /* Preview Content */,
 			);
 			path = MVVM;
@@ -282,6 +297,7 @@
 		84744207232F665900496864 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84744295233AA46B00496864 /* SwiftUI */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +314,7 @@
 			children = (
 				8474423D233357E100496864 /* Interfaces */,
 				8474420F232F675F00496864 /* MoviesRepository.swift */,
+				84744296233B449900496864 /* PosterImageRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -308,6 +325,7 @@
 				847442332332CB5E00496864 /* Interfaces */,
 				847442302332C64900496864 /* Routers */,
 				84744211232F689300496864 /* MoviesService.swift */,
+				847442A0233B498400496864 /* PosterImagesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,6 +361,7 @@
 				8474426F2336630C00496864 /* CoreDataStorage.swift */,
 				8474427423367BDC00496864 /* MoviesDao.swift */,
 				8474428D2337E53000496864 /* MoviesQueryDao.swift */,
+				847442A4233C01F400496864 /* PosterImagesDao.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -396,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				847442342332CB7500496864 /* IMoviesService.swift */,
+				8474429E233B493D00496864 /* IPosterImagesService.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -421,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				847442392333532E00496864 /* Movie.swift */,
+				8474429C233B471200496864 /* PosterImage.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -429,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				8474423E233357F200496864 /* IMoviesRepository.swift */,
+				84744298233B453C00496864 /* IPosterImagesRepository.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -440,6 +462,7 @@
 				84744260233629FA00496864 /* IDao.swift */,
 				8474427623367C8A00496864 /* Identifiable.swift */,
 				8474428B2337E4C900496864 /* IMoviesQueryDao.swift */,
+				8474429A233B45E800496864 /* IPosterImagesDao.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -501,6 +524,7 @@
 			children = (
 				8474426B2336608F00496864 /* MovieObject.swift */,
 				8474428F233800C000496864 /* MoviesQueryObject+Mapping.swift */,
+				847442A2233BFF6A00496864 /* PosterImageObject+Mapping.swift */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -553,6 +577,14 @@
 				8474428223377DDA00496864 /* ObjectMapping.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84744295233AA46B00496864 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				847441DA232F64E600496864 /* ContentView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		C7254BD67ACD0DD58208BF00 /* Frameworks */ = {
@@ -808,11 +840,14 @@
 				8474425F2336237C00496864 /* AppSettings.swift in Sources */,
 				8474422D2332C02D00496864 /* Cancellable.swift in Sources */,
 				84744216232F6C1500496864 /* Endpoint.swift in Sources */,
+				847442A1233B498400496864 /* PosterImagesService.swift in Sources */,
 				8474428323377DDA00496864 /* ObjectMapping.swift in Sources */,
 				8474426E233661DA00496864 /* CoreDataDao.swift in Sources */,
 				8474421A2330062F00496864 /* NetworkSession.swift in Sources */,
+				84744299233B453C00496864 /* IPosterImagesRepository.swift in Sources */,
 				84744261233629FA00496864 /* IDao.swift in Sources */,
 				847442702336630C00496864 /* CoreDataStorage.swift in Sources */,
+				84744297233B449900496864 /* PosterImageRepository.swift in Sources */,
 				847441D4232F64E600496864 /* AppDelegate.swift in Sources */,
 				84744210232F675F00496864 /* MoviesRepository.swift in Sources */,
 				847442202330AF1E00496864 /* AFAuth.swift in Sources */,
@@ -827,9 +862,12 @@
 				847441D6232F64E600496864 /* SceneDelegate.swift in Sources */,
 				8474422A2332BE0000496864 /* IJsonNetworkService.swift in Sources */,
 				84744218232F6E8300496864 /* NetworkConfiguration.swift in Sources */,
+				8474429F233B493D00496864 /* IPosterImagesService.swift in Sources */,
 				847442352332CB7500496864 /* IMoviesService.swift in Sources */,
+				8474429B233B45E800496864 /* IPosterImagesDao.swift in Sources */,
 				8474425D23361EFC00496864 /* LiveData.swift in Sources */,
 				847442672336305100496864 /* UserDefaultsDao.swift in Sources */,
+				847442A5233C01F400496864 /* PosterImagesDao.swift in Sources */,
 				847441DB232F64E600496864 /* ContentView.swift in Sources */,
 				847441D9232F64E600496864 /* MVVM.xcdatamodeld in Sources */,
 				847442322332C65C00496864 /* Router.swift in Sources */,
@@ -840,8 +878,10 @@
 				8474422F2332C46300496864 /* Endpoints.swift in Sources */,
 				847442262330BC8400496864 /* AFNetworkService.swift in Sources */,
 				847442242330B25F00496864 /* AFRouter.swift in Sources */,
+				847442A3233BFF6A00496864 /* PosterImageObject+Mapping.swift in Sources */,
 				84744214232F6AD400496864 /* NetworkService.swift in Sources */,
 				8474426C2336608F00496864 /* MovieObject.swift in Sources */,
+				8474429D233B471200496864 /* PosterImage.swift in Sources */,
 				8474427523367BDC00496864 /* MoviesDao.swift in Sources */,
 				8474423A2333532E00496864 /* Movie.swift in Sources */,
 				8474423F233357F200496864 /* IMoviesRepository.swift in Sources */,

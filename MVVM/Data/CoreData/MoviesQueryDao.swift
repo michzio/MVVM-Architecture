@@ -45,6 +45,29 @@ extension MoviesQueryDao : IMoviesQueryDao {
               }
     }
     
+    func recent(number: Int, completion: @escaping (Result<[MoviesQuery], Error>) -> Void) {
+        
+        self.storage.persistentContainer.performBackgroundTask { [weak self] context in
+            guard let self = self else { return }
+            
+            let request : NSFetchRequest<MoviesQueryObject> = MoviesQueryObject.fetchRequest()
+            
+            request.fetchLimit = number
+            
+            // sort by insertion date
+            request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
+            
+            do {
+                let objects = try context.fetch(request)
+                let queries = objects.map { self.decode(object: $0) }
+                
+                completion(.success(queries))
+            } catch {
+                completion(.failure(CoreDataError.readError(error)))
+            }
+        }
+    }
+    
     func sync(moviesQuery: MoviesQuery, completion: @escaping (Result<MoviesQuery, Error>) -> Void) {
         
         self.storage.persistentContainer.performBackgroundTask { [weak self] context in
@@ -54,7 +77,7 @@ extension MoviesQueryDao : IMoviesQueryDao {
             
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
                 NSPredicate(format: "query = %@", moviesQuery.query ?? ""),
-                NSPredicate(format: "page = %@", moviesQuery.page)
+                NSPredicate(format: "page = %d", moviesQuery.page)
             ])
             
             
