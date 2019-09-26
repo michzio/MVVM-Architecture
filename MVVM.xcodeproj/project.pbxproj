@@ -71,6 +71,7 @@
 		847442A1233B498400496864 /* PosterImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A0233B498400496864 /* PosterImagesService.swift */; };
 		847442A3233BFF6A00496864 /* PosterImageObject+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A2233BFF6A00496864 /* PosterImageObject+Mapping.swift */; };
 		847442A5233C01F400496864 /* PosterImagesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A4233C01F400496864 /* PosterImagesDao.swift */; };
+		847442A7233D61BE00496864 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A6233D61BE00496864 /* ContentView2.swift */; };
 		AE13ACC1062E16B54054F7F0 /* Pods_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102F35CDC3A6C77D0A61AAE9 /* Pods_MVVMTests.framework */; };
 		BCCDE37281A089406CDA1CE6 /* Pods_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06A446540EC25C3115A69DB /* Pods_MVVM.framework */; };
 /* End PBXBuildFile section */
@@ -169,6 +170,7 @@
 		847442A0233B498400496864 /* PosterImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesService.swift; sourceTree = "<group>"; };
 		847442A2233BFF6A00496864 /* PosterImageObject+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PosterImageObject+Mapping.swift"; sourceTree = "<group>"; };
 		847442A4233C01F400496864 /* PosterImagesDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesDao.swift; sourceTree = "<group>"; };
+		847442A6233D61BE00496864 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		875ED74388051B6F15649EB4 /* Pods-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM.release.xcconfig"; path = "Target Support Files/Pods-MVVM/Pods-MVVM.release.xcconfig"; sourceTree = "<group>"; };
 		B06A446540EC25C3115A69DB /* Pods_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -583,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				847441DA232F64E600496864 /* ContentView.swift */,
+				847442A6233D61BE00496864 /* ContentView2.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				847442242330B25F00496864 /* AFRouter.swift in Sources */,
 				847442A3233BFF6A00496864 /* PosterImageObject+Mapping.swift in Sources */,
 				84744214232F6AD400496864 /* NetworkService.swift in Sources */,
+				847442A7233D61BE00496864 /* ContentView2.swift in Sources */,
 				8474426C2336608F00496864 /* MovieObject.swift in Sources */,
 				8474429D233B471200496864 /* PosterImage.swift in Sources */,
 				8474427523367BDC00496864 /* MoviesDao.swift in Sources */,
