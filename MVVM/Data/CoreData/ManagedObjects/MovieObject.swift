@@ -6,7 +6,7 @@
 //  Copyright © 2019 Michal Ziobro. All rights reserved.
 //
 
-import UIKit
+import Foundation 
 import CoreData
 
 @objc(MovieObject)

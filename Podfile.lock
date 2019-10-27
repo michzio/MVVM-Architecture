@@ -9,11 +9,19 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.11.0):
     - PromiseKit/CorePromise
+  - Realm (3.20.0):
+    - Realm/Headers (= 3.20.0)
+  - Realm/Headers (3.20.0)
+  - RealmSwift (3.20.0):
+    - Realm (= 3.20.0)
   - RxBlocking (5.0.0):
     - RxSwift (~> 5)
   - RxCocoa (5.0.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxRealm (1.0.0):
+    - RealmSwift (~> 3.14)
+    - RxSwift (~> 5.0)
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
@@ -24,8 +32,10 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.2)
   - PromiseKit (~> 6.8)
+  - RealmSwift
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
+  - RxRealm
   - RxSwift (~> 5)
   - RxTest (~> 5)
   - SwiftyJSON (~> 4.0)
@@ -34,8 +44,11 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - PromiseKit
+    - Realm
+    - RealmSwift
     - RxBlocking
     - RxCocoa
+    - RxRealm
     - RxRelay
     - RxSwift
     - RxTest
@@ -44,13 +57,16 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
+  Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
+  RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRealm: 1e81dcfca1fb50c3e9b3e1f8102bc875c5156a2e
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 0a05d62fcddc3fabe0a4e2726952a7ac6af4ed80
+PODFILE CHECKSUM: 264e703c3abdeef232d1cc2b75046494ce0c839e
 
 COCOAPODS: 1.7.5

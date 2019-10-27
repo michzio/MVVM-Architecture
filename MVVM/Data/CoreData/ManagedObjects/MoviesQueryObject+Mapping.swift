@@ -40,8 +40,7 @@ extension MoviesQueryObject {
         let toRemove = self.results?
             .map { $0 as! MovieObject }
             .filter {
-                let o = $0 as! MovieObject
-                return ids.contains(o.id) == false
+                return ids.contains($0.id) == false
             }
     
         toInsert.forEach { movie in

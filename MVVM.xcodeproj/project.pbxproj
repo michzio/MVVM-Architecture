@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		808803A43DBF172E182679DE /* Pods_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FCA5BB56B7A859AB4A6D309 /* Pods_MVVMUITests.framework */; };
+		8417CB46236440DF006F8506 /* MovieRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB45236440DF006F8506 /* MovieRealmObject.swift */; };
+		8417CB4823644628006F8506 /* MovieQueryRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB4723644628006F8506 /* MovieQueryRealmObject.swift */; };
+		8417CB4A23644F44006F8506 /* PosterImageRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB4923644F44006F8506 /* PosterImageRealmObject.swift */; };
+		8417CB4D23645AFB006F8506 /* IRealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB4C23645AFB006F8506 /* IRealmStorage.swift */; };
+		8417CB5123645E10006F8506 /* RealmDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB5023645E10006F8506 /* RealmDao.swift */; };
+		8417CB5323658B32006F8506 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB5223658B32006F8506 /* RealmStorage.swift */; };
+		8417CB5523658DA3006F8506 /* MoviesRealmDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB5423658DA3006F8506 /* MoviesRealmDao.swift */; };
+		8417CB5B2365967E006F8506 /* MoviesRealmDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB5A2365967E006F8506 /* MoviesRealmDaoTests.swift */; };
+		8417CB5D236599F4006F8506 /* InMemoryRealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB5823659508006F8506 /* InMemoryRealmStorage.swift */; };
+		8417CB602365A584006F8506 /* IDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB5F2365A584006F8506 /* IDao+Rx.swift */; };
+		8417CB632365A5C8006F8506 /* IDao+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB622365A5C8006F8506 /* IDao+Combine.swift */; };
+		8417CB652365A676006F8506 /* IMoviesDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB642365A676006F8506 /* IMoviesDao+Rx.swift */; };
+		8417CB672365AB3B006F8506 /* IMoviesQueryDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB662365AB3B006F8506 /* IMoviesQueryDao+Rx.swift */; };
+		8417CB692365B317006F8506 /* IPosterImagesDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB682365B317006F8506 /* IPosterImagesDao+Rx.swift */; };
+		8417CB6C2365B647006F8506 /* RealmDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB6B2365B647006F8506 /* RealmDao+Rx.swift */; };
+		8417CB6E2365D1B0006F8506 /* MoviesRealmDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417CB6D2365D1B0006F8506 /* MoviesRealmDao+Rx.swift */; };
 		847441D4232F64E600496864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847441D3232F64E600496864 /* AppDelegate.swift */; };
 		847441D6232F64E600496864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847441D5232F64E600496864 /* SceneDelegate.swift */; };
 		847441D9232F64E600496864 /* MVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847441D7232F64E600496864 /* MVVM.xcdatamodeld */; };
@@ -101,6 +117,22 @@
 		54D7DB8B88BA474B70C53CC2 /* Pods-MVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMTests.release.xcconfig"; path = "Target Support Files/Pods-MVVMTests/Pods-MVVMTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B57B2B9271205300B1F56C1 /* Pods-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-MVVMUITests/Pods-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7FCA5BB56B7A859AB4A6D309 /* Pods_MVVMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8417CB45236440DF006F8506 /* MovieRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRealmObject.swift; sourceTree = "<group>"; };
+		8417CB4723644628006F8506 /* MovieQueryRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieQueryRealmObject.swift; sourceTree = "<group>"; };
+		8417CB4923644F44006F8506 /* PosterImageRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageRealmObject.swift; sourceTree = "<group>"; };
+		8417CB4C23645AFB006F8506 /* IRealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRealmStorage.swift; sourceTree = "<group>"; };
+		8417CB5023645E10006F8506 /* RealmDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDao.swift; sourceTree = "<group>"; };
+		8417CB5223658B32006F8506 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		8417CB5423658DA3006F8506 /* MoviesRealmDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRealmDao.swift; sourceTree = "<group>"; };
+		8417CB5823659508006F8506 /* InMemoryRealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRealmStorage.swift; sourceTree = "<group>"; };
+		8417CB5A2365967E006F8506 /* MoviesRealmDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRealmDaoTests.swift; sourceTree = "<group>"; };
+		8417CB5F2365A584006F8506 /* IDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IDao+Rx.swift"; sourceTree = "<group>"; };
+		8417CB622365A5C8006F8506 /* IDao+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IDao+Combine.swift"; sourceTree = "<group>"; };
+		8417CB642365A676006F8506 /* IMoviesDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IMoviesDao+Rx.swift"; sourceTree = "<group>"; };
+		8417CB662365AB3B006F8506 /* IMoviesQueryDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IMoviesQueryDao+Rx.swift"; sourceTree = "<group>"; };
+		8417CB682365B317006F8506 /* IPosterImagesDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IPosterImagesDao+Rx.swift"; sourceTree = "<group>"; };
+		8417CB6B2365B647006F8506 /* RealmDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmDao+Rx.swift"; sourceTree = "<group>"; };
+		8417CB6D2365D1B0006F8506 /* MoviesRealmDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesRealmDao+Rx.swift"; sourceTree = "<group>"; };
 		847441D0232F64E600496864 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		847441D3232F64E600496864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		847441D5232F64E600496864 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +246,69 @@
 				6B57B2B9271205300B1F56C1 /* Pods-MVVMUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8417CB442364409A006F8506 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8417CB45236440DF006F8506 /* MovieRealmObject.swift */,
+				8417CB4723644628006F8506 /* MovieQueryRealmObject.swift */,
+				8417CB4923644F44006F8506 /* PosterImageRealmObject.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		8417CB4B23645AE7006F8506 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				8417CB4C23645AFB006F8506 /* IRealmStorage.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		8417CB56236594E5006F8506 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				8417CB57236594F5006F8506 /* Mocks */,
+				8417CB5A2365967E006F8506 /* MoviesRealmDaoTests.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		8417CB57236594F5006F8506 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8417CB5823659508006F8506 /* InMemoryRealmStorage.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8417CB5E2365A573006F8506 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				8417CB5F2365A584006F8506 /* IDao+Rx.swift */,
+				8417CB642365A676006F8506 /* IMoviesDao+Rx.swift */,
+				8417CB662365AB3B006F8506 /* IMoviesQueryDao+Rx.swift */,
+				8417CB682365B317006F8506 /* IPosterImagesDao+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		8417CB612365A5B9006F8506 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				8417CB622365A5C8006F8506 /* IDao+Combine.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		8417CB6A2365B63A006F8506 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				8417CB6B2365B647006F8506 /* RealmDao+Rx.swift */,
+				8417CB6D2365D1B0006F8506 /* MoviesRealmDao+Rx.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		847441C7232F64E500496864 = {
@@ -425,6 +520,12 @@
 		84744236233351FB00496864 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				8417CB6A2365B63A006F8506 /* Rx */,
+				8417CB4B23645AE7006F8506 /* Interfaces */,
+				8417CB442364409A006F8506 /* Objects */,
+				8417CB5223658B32006F8506 /* RealmStorage.swift */,
+				8417CB5023645E10006F8506 /* RealmDao.swift */,
+				8417CB5423658DA3006F8506 /* MoviesRealmDao.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -460,6 +561,8 @@
 		8474424323335CD600496864 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				8417CB612365A5B9006F8506 /* Combine */,
+				8417CB5E2365A573006F8506 /* Rx */,
 				8474424423335CE700496864 /* IMoviesDao.swift */,
 				84744260233629FA00496864 /* IDao.swift */,
 				8474427623367C8A00496864 /* Identifiable.swift */,
@@ -550,6 +653,7 @@
 		8474427B2337727900496864 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8417CB56236594E5006F8506 /* Realm */,
 				8474427C2337728100496864 /* CoreData */,
 			);
 			path = Data;
@@ -843,14 +947,17 @@
 				8474425F2336237C00496864 /* AppSettings.swift in Sources */,
 				8474422D2332C02D00496864 /* Cancellable.swift in Sources */,
 				84744216232F6C1500496864 /* Endpoint.swift in Sources */,
+				8417CB632365A5C8006F8506 /* IDao+Combine.swift in Sources */,
 				847442A1233B498400496864 /* PosterImagesService.swift in Sources */,
 				8474428323377DDA00496864 /* ObjectMapping.swift in Sources */,
 				8474426E233661DA00496864 /* CoreDataDao.swift in Sources */,
+				8417CB4823644628006F8506 /* MovieQueryRealmObject.swift in Sources */,
 				8474421A2330062F00496864 /* NetworkSession.swift in Sources */,
 				84744299233B453C00496864 /* IPosterImagesRepository.swift in Sources */,
 				84744261233629FA00496864 /* IDao.swift in Sources */,
 				847442702336630C00496864 /* CoreDataStorage.swift in Sources */,
 				84744297233B449900496864 /* PosterImageRepository.swift in Sources */,
+				8417CB6C2365B647006F8506 /* RealmDao+Rx.swift in Sources */,
 				847441D4232F64E600496864 /* AppDelegate.swift in Sources */,
 				84744210232F675F00496864 /* MoviesRepository.swift in Sources */,
 				847442202330AF1E00496864 /* AFAuth.swift in Sources */,
@@ -861,34 +968,45 @@
 				8474427A233771DE00496864 /* ICoreDataStorage.swift in Sources */,
 				8474428C2337E4C900496864 /* IMoviesQueryDao.swift in Sources */,
 				8474428E2337E53000496864 /* MoviesQueryDao.swift in Sources */,
+				8417CB5123645E10006F8506 /* RealmDao.swift in Sources */,
 				8474427723367C8A00496864 /* Identifiable.swift in Sources */,
 				847441D6232F64E600496864 /* SceneDelegate.swift in Sources */,
+				8417CB672365AB3B006F8506 /* IMoviesQueryDao+Rx.swift in Sources */,
 				8474422A2332BE0000496864 /* IJsonNetworkService.swift in Sources */,
 				84744218232F6E8300496864 /* NetworkConfiguration.swift in Sources */,
 				8474429F233B493D00496864 /* IPosterImagesService.swift in Sources */,
+				8417CB6E2365D1B0006F8506 /* MoviesRealmDao+Rx.swift in Sources */,
 				847442352332CB7500496864 /* IMoviesService.swift in Sources */,
 				8474429B233B45E800496864 /* IPosterImagesDao.swift in Sources */,
+				8417CB652365A676006F8506 /* IMoviesDao+Rx.swift in Sources */,
 				8474425D23361EFC00496864 /* LiveData.swift in Sources */,
 				847442672336305100496864 /* UserDefaultsDao.swift in Sources */,
 				847442A5233C01F400496864 /* PosterImagesDao.swift in Sources */,
 				847441DB232F64E600496864 /* ContentView.swift in Sources */,
 				847441D9232F64E600496864 /* MVVM.xcdatamodeld in Sources */,
+				8417CB46236440DF006F8506 /* MovieRealmObject.swift in Sources */,
+				8417CB692365B317006F8506 /* IPosterImagesDao+Rx.swift in Sources */,
 				847442322332C65C00496864 /* Router.swift in Sources */,
 				847442282332BD2200496864 /* IPromiseNetworkService.swift in Sources */,
 				8474426523362F7000496864 /* MoviesUserDefaultsDao.swift in Sources */,
 				847442222330B01C00496864 /* AuthRequestInterceptor.swift in Sources */,
 				8474424523335CE700496864 /* IMoviesDao.swift in Sources */,
 				8474422F2332C46300496864 /* Endpoints.swift in Sources */,
+				8417CB602365A584006F8506 /* IDao+Rx.swift in Sources */,
 				847442262330BC8400496864 /* AFNetworkService.swift in Sources */,
 				847442242330B25F00496864 /* AFRouter.swift in Sources */,
 				847442A3233BFF6A00496864 /* PosterImageObject+Mapping.swift in Sources */,
 				84744214232F6AD400496864 /* NetworkService.swift in Sources */,
+				8417CB5523658DA3006F8506 /* MoviesRealmDao.swift in Sources */,
 				847442A7233D61BE00496864 /* ContentView2.swift in Sources */,
 				8474426C2336608F00496864 /* MovieObject.swift in Sources */,
 				8474429D233B471200496864 /* PosterImage.swift in Sources */,
 				8474427523367BDC00496864 /* MoviesDao.swift in Sources */,
+				8417CB4D23645AFB006F8506 /* IRealmStorage.swift in Sources */,
+				8417CB5323658B32006F8506 /* RealmStorage.swift in Sources */,
 				8474423A2333532E00496864 /* Movie.swift in Sources */,
 				8474423F233357F200496864 /* IMoviesRepository.swift in Sources */,
+				8417CB4A23644F44006F8506 /* PosterImageRealmObject.swift in Sources */,
 				8474421C2330075100496864 /* NetworkLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,6 +1024,8 @@
 				84744280233772B100496864 /* InMemoryCoreDataStorage.swift in Sources */,
 				8474424E23351AB200496864 /* NetworkSessionMock.swift in Sources */,
 				847441EE232F64EB00496864 /* MVVMTests.swift in Sources */,
+				8417CB5B2365967E006F8506 /* MoviesRealmDaoTests.swift in Sources */,
+				8417CB5D236599F4006F8506 /* InMemoryRealmStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

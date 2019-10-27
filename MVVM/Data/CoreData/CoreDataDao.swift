@@ -193,7 +193,7 @@ class CoreDataDao<T : CoreDataStorable, ManagedObject: NSManagedObject> : IDao {
     }
     
     
-    // MARK: - OVERRIDEBLE
+    // MARK: - OVERRIDABLE
     var sortDescriptors : [NSSortDescriptor]? {
         return nil
     }

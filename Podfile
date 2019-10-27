@@ -13,6 +13,10 @@ target 'MVVM' do
   # ReactiveX
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  
+  # Realm
+  pod 'RealmSwift'
+  pod 'RxRealm'
 
   target 'MVVMTests' do
     inherit! :search_paths
