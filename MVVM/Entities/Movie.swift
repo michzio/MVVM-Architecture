@@ -72,3 +72,15 @@ extension MoviesQuery : Identifiable {
         return "\(page)-\(query ?? "")"
     }
 }
+
+extension MoviesQuery : Hashable {
+    
+    static func == (lhs: MoviesQuery, rhs: MoviesQuery) -> Bool {
+        return lhs.query == rhs.query && lhs.page == rhs.page
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(query)
+        hasher.combine(page)
+    }
+}

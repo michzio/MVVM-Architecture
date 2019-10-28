@@ -89,6 +89,7 @@
 		847442A3233BFF6A00496864 /* PosterImageObject+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A2233BFF6A00496864 /* PosterImageObject+Mapping.swift */; };
 		847442A5233C01F400496864 /* PosterImagesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A4233C01F400496864 /* PosterImagesDao.swift */; };
 		847442A7233D61BE00496864 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A6233D61BE00496864 /* ContentView2.swift */; };
+		84B0B283236770A100D3E2BF /* PosterImagesDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0B282236770A100D3E2BF /* PosterImagesDaoTests.swift */; };
 		84B34F3923660EDD0024EBE5 /* MoviesQueryRealmDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B34F3823660EDD0024EBE5 /* MoviesQueryRealmDao+Rx.swift */; };
 		84B34F3B23661BF80024EBE5 /* PosterImagesRealmDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B34F3A23661BF80024EBE5 /* PosterImagesRealmDao.swift */; };
 		84B34F3D23661DBB0024EBE5 /* PosterImagesRealmDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B34F3C23661DBB0024EBE5 /* PosterImagesRealmDao+Rx.swift */; };
@@ -212,6 +213,7 @@
 		847442A2233BFF6A00496864 /* PosterImageObject+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PosterImageObject+Mapping.swift"; sourceTree = "<group>"; };
 		847442A4233C01F400496864 /* PosterImagesDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesDao.swift; sourceTree = "<group>"; };
 		847442A6233D61BE00496864 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		84B0B282236770A100D3E2BF /* PosterImagesDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesDaoTests.swift; sourceTree = "<group>"; };
 		84B34F3823660EDD0024EBE5 /* MoviesQueryRealmDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesQueryRealmDao+Rx.swift"; sourceTree = "<group>"; };
 		84B34F3A23661BF80024EBE5 /* PosterImagesRealmDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesRealmDao.swift; sourceTree = "<group>"; };
 		84B34F3C23661DBB0024EBE5 /* PosterImagesRealmDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PosterImagesRealmDao+Rx.swift"; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				8474427D2337728900496864 /* Mocks */,
 				847442842337813100496864 /* MoviesDaoTests.swift */,
 				847442932338191700496864 /* MoviesQueryDaoTests.swift */,
+				84B0B282236770A100D3E2BF /* PosterImagesDaoTests.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -1058,6 +1061,7 @@
 				8474425323360C2C00496864 /* AFNetworkServiceTests.swift in Sources */,
 				847442852337813100496864 /* MoviesDaoTests.swift in Sources */,
 				847442942338191700496864 /* MoviesQueryDaoTests.swift in Sources */,
+				84B0B283236770A100D3E2BF /* PosterImagesDaoTests.swift in Sources */,
 				8474425A233614C700496864 /* URLProtocolMock.swift in Sources */,
 				8474424B2335194400496864 /* NetworkServiceTests.swift in Sources */,
 				8474425023351B6E00496864 /* NetworkConfigurationMock.swift in Sources */,

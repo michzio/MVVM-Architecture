@@ -172,6 +172,8 @@ extension CoreDataDao : IDao_Rx {
         let request = ManagedObject.fetchRequest() as! NSFetchRequest<ManagedObject>
         request.predicate = NSPredicate(format: "id = %@", id)
         
+        request.sortDescriptors = self.sortDescriptors ?? [NSSortDescriptor(key: "id", ascending: true)]
+        
         return self.storage.taskContext.rx.entities(fetchRequest: request)
             .map { objects -> Entity in
                 if let object = objects.first {

@@ -22,3 +22,15 @@ extension PosterImage : Identifiable {
         return "\(path)-\(width)"
     }
 }
+
+extension PosterImage : Hashable {
+    
+    static func == (lhs: PosterImage, rhs: PosterImage) -> Bool {
+        return lhs.path == rhs.path && lhs.width == rhs.width
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(path)
+        hasher.combine(width)
+    }
+}

@@ -29,7 +29,7 @@ extension MoviesQueryDao : IMoviesQueryDao {
                   let request : NSFetchRequest<MoviesQueryObject> = MoviesQueryObject.fetchRequest()
                   request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
                       NSPredicate(format: "query = %@", query),
-                      NSPredicate(format: "page = %@", page)
+                      NSPredicate(format: "page = %d", page)
                   ])
                   
                   do {

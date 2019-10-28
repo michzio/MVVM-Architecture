@@ -65,7 +65,7 @@ extension MoviesDao : IMoviesDao {
             let batchDelete = NSBatchDeleteRequest(fetchRequest: request)
             batchDelete.resultType = .resultTypeObjectIDs
             
-            // execute the batch delete request and merge the changes to viewContex
+            // execute the batch delete request and merge the changes to viewContext
             do {
                 let result = try context.execute(batchDelete) as? NSBatchDeleteResult
                 

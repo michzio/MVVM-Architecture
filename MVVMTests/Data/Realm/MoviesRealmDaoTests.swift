@@ -142,7 +142,8 @@ class MoviesRealmDaoTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
 }
-    // MARK: - Rx
+
+// MARK: - Rx
 extension MoviesRealmDaoTests {
     
     func test_rx_whenMovieSaved_shouldBeRetrivable() {
