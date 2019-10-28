@@ -14,6 +14,8 @@ target 'MVVM' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   
+  pod 'RxCoreData'
+
   # Realm
   pod 'RealmSwift'
   pod 'RxRealm'
