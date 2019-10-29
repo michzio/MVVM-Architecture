@@ -8,20 +8,13 @@
 
 import Foundation
 
-public protocol INetworkService {
-    
-    @discardableResult
-    func request<T: Decodable>(with endpoint: Requestable, queue: DispatchQueue, completion: @escaping (Result<T, Error>) -> Void) -> Cancellable?
-    @discardableResult
-    func request(with endpoint: Requestable, queue: DispatchQueue, completion: @escaping (Result<Data, Error>) -> Void) -> Cancellable?
-}
-
 public final class NetworkService {
     
     private let session: INetworkSession
     private let configuration: INetworkConfiguration
-    private let decoder: JSONDecoder
     private let logger: INetworkLogger
+    
+    internal let decoder: JSONDecoder
     
     init(session: INetworkSession,
          configuration: INetworkConfiguration,
@@ -125,11 +118,17 @@ extension NetworkService : INetworkService {
     }
 }
 
+// MARK: - Helpers
+extension NetworkService  {
+    
+    internal func urlRequest(from endpoint: Requestable) throws -> URLRequest {
+        return try endpoint.urlRequest(with: configuration)
+    }
+    
+    internal var urlSession : URLSession {
+        return (self.session as? URLSession) ?? URLSession.shared
+    }
+}
+
 extension NetworkService : IPromiseNetworkService { }
 extension NetworkService : IJsonNetworkService { }
-
-enum NetworkError : Error {
-    case empty
-    case decoding
-    case statusCode(code: Int)
-}

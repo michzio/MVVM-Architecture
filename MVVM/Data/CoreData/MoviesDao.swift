@@ -34,8 +34,8 @@ extension MoviesDao : IMoviesDao {
             
             let request : NSFetchRequest<MovieObject> = MovieObject.fetchRequest() as! NSFetchRequest<MovieObject>
             request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [
-                NSPredicate(format: "title = %@", query),
-                NSPredicate(format: "overview = %@", query)
+                NSPredicate(format: "title CONTAINS[cd] %@", query),
+                NSPredicate(format: "overview CONTAINS[cd] %@", query)
             ])
             
             if let sortDescriptors = self.sortDescriptors {
@@ -62,18 +62,30 @@ extension MoviesDao : IMoviesDao {
             let ids = movies.map { "\($0.id)" }
             request.predicate = NSPredicate(format: "id in %@", ids)
             
-            let batchDelete = NSBatchDeleteRequest(fetchRequest: request)
-            batchDelete.resultType = .resultTypeObjectIDs
-            
-            // execute the batch delete request and merge the changes to viewContext
-            do {
-                let result = try context.execute(batchDelete) as? NSBatchDeleteResult
-                
-                if let deletedObjectIds = result?.result as? [NSManagedObjectID] {
-                    NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIds], into: [self.storage.persistentContainer.viewContext])
+            if self.storage.isInMemoryStore {
+                do {
+                    let result : [MovieObject] = try context.fetch(request) as! [MovieObject]
+                    
+                    for object in result {
+                        context.delete(object)
+                    }
+                } catch {
+                    completion(.failure(CoreDataError.deleteError(error)))
                 }
-            } catch {
-                completion(.failure(CoreDataError.deleteError(error)))
+            } else {
+                let batchDelete = NSBatchDeleteRequest(fetchRequest: request)
+                batchDelete.resultType = .resultTypeObjectIDs
+                
+                // execute the batch delete request and merge the changes to viewContext
+                do {
+                    let result = try context.execute(batchDelete) as? NSBatchDeleteResult
+                    
+                    if let deletedObjectIds = result?.result as? [NSManagedObjectID] {
+                        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIds], into: [self.storage.persistentContainer.viewContext])
+                    }
+                } catch {
+                    completion(.failure(CoreDataError.deleteError(error)))
+                }
             }
             
             // create new records

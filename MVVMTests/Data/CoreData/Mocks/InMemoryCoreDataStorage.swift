@@ -11,6 +11,10 @@ import MVVM
 
 class InMemoryCoreDataStorage : ICoreDataStorage {
     
+    var isInMemoryStore: Bool {
+        return true
+    }
+    
     static let sharedName : String = "InMemoryShared.sqlite"
     
     // MARK: - Core Data stack

@@ -63,7 +63,7 @@ class MoviesQueryDaoTests: XCTestCase {
         
         let movie22 = Movie(id: 2, title: "Test 2", posterPath: nil, overview: "Test Details 2", releaseDate: nil)
         
-        let moviesQuery1 = MoviesQuery(query: "Test", page: 1, totalPages: 10, results: [movie1, movie2])
+        let moviesQuery1 = MoviesQuery(query: "Test 1", page: 1, totalPages: 10, results: [movie1, movie2])
         let moviesQuery2 = MoviesQuery(query: "Test 2", page: 2, totalPages: 10, results: [movie22, movie3])
         
         let expectation = self.expectation(description: "Should update movie on second insert")
@@ -156,7 +156,7 @@ class MoviesQueryDaoTests: XCTestCase {
         wait(for: [expectation], timeout: 0.4)
     }
     
-    func test_whenInsertedMoviesQueries_shouldReturnRecentQueries() {
+    func test_whenInsertMoviesQueries_shouldReturnRecentQueries() {
         
         // given
         let dao = MoviesQueryDao(storage: storage)
@@ -212,4 +212,101 @@ extension MoviesQueryDaoTests {
         XCTAssertEqual(movies, query!.results.sorted(by: \.id))
     }
     
+    func test_rx_whenInsertMoviesQuery_shouldUpdateMovies() {
+        
+        // given
+        let dao = MoviesQueryDao(storage: storage)
+        let moviesDao = MoviesDao(storage: storage)
+        
+        let movie1 = Movie(id: 1, title: "Test Title 1", posterPath: nil, overview: "Test Details 1", releaseDate: nil)
+        let movie2 = Movie(id: 2, title: "Test Title 2", posterPath: nil, overview: "Test Details 2", releaseDate: nil)
+        let movie3 = Movie(id: 3, title: "Test Title 3", posterPath: nil, overview: "Test Details 3", releaseDate: nil)
+        
+        let movie22 = Movie(id: 2, title: "Test 2", posterPath: nil, overview: "Test Details 2", releaseDate: nil)
+        
+        let moviesQuery1 = MoviesQuery(query: "Test 1", page: 1, totalPages: 10, results: [movie1, movie2])
+        let moviesQuery2 = MoviesQuery(query: "Test 2", page: 2, totalPages: 10, results: [movie22, movie3])
+        
+        // when
+        _ = try? dao.insert(moviesQuery1).toBlocking(timeout: 0.1).first()
+        let movies1 = try? moviesDao.loadAll().toBlocking(timeout: 0.1).first()
+        _ = try? dao.insert(moviesQuery2).toBlocking(timeout: 0.1).first()
+        let movies2 = try? moviesDao.loadAll().toBlocking(timeout: 0.1).first()
+        
+        // then
+        XCTAssertNotNil(movies1, "Should load movies1")
+        XCTAssertNotNil(movies2, "Should load movies2")
+        XCTAssertEqual(movies1!.sorted(by: \.id), [movie1, movie2])
+        XCTAssertEqual(movies2!.sorted(by: \.id), [movie1, movie22, movie3])
+    }
+    
+    func test_rx_whenSyncMoviesQuery_shouldInsertThenUpdate() {
+        
+        // given
+        let dao = MoviesQueryDao(storage: storage)
+        
+        let movie1 = Movie(id: 1, title: "Test Title 1", posterPath: nil, overview: "Test Details 1", releaseDate: nil)
+        let movie2 = Movie(id: 2, title: "Test Title 2", posterPath: nil, overview: "Test Details 2", releaseDate: nil)
+        let movie3 = Movie(id: 3, title: "Test Title 3", posterPath: nil, overview: "Test Details 3", releaseDate: nil)
+        
+        let moviesQuery1 = MoviesQuery(query: "Test Query", page: 1, totalPages: 10, results: [movie1, movie2])
+        let moviesQuery2 = MoviesQuery(query: "Test Query", page: 1, totalPages: 10, results: [movie1, movie3])
+        
+        // when
+        _ = try? dao.sync(moviesQuery: moviesQuery1).toBlocking(timeout: 0.1).first()
+        _ = try? dao.sync(moviesQuery: moviesQuery2).toBlocking(timeout: 0.1).first()
+        let queries = try? dao.recent(number: 10).toBlocking(timeout: 0.1).first()
+        
+        // then
+        XCTAssertNotNil(queries)
+        XCTAssertEqual(queries!.count, 1)
+        XCTAssertEqual(queries!.first!.results.sorted(by: \.id), [movie1, movie3])
+    }
+    
+    func test_rx_whenSyncMoviesQuery_shouldLoadIt() {
+        
+        // given
+        let dao = MoviesQueryDao(storage: storage)
+        
+        let movie1 = Movie(id: 1, title: "Test Title 1", posterPath: nil, overview: "Test Details 1", releaseDate: nil)
+        let movie2 = Movie(id: 2, title: "Test Title 2", posterPath: nil, overview: "Test Details 2", releaseDate: nil)
+        let movie3 = Movie(id: 3, title: "Test Title 3", posterPath: nil, overview: "Test Details 3", releaseDate: nil)
+        
+        let moviesQuery1 = MoviesQuery(query: "Test Query", page: 1, totalPages: 10, results: [movie1, movie2])
+        let moviesQuery2 = MoviesQuery(query: "Test Query", page: 2, totalPages: 10, results: [movie3])
+        
+        // when
+        _ = try? dao.sync(moviesQuery: moviesQuery1).toBlocking(timeout: 0.1).first()
+        _ = try? dao.sync(moviesQuery: moviesQuery2).toBlocking(timeout: 0.1).first()
+        let query1 = try? dao.load(query: "Test Query", page: 1).toBlocking(timeout: 0.1).first()
+        let query2 = try? dao.load(query: "Test Query", page: 2).toBlocking(timeout: 0.1).first()
+        
+        XCTAssertNotNil(query1, "Should load synced query1")
+        XCTAssertNotNil(query2, "Should load synced query2")
+        XCTAssertEqual(query1, moviesQuery1)
+        XCTAssertEqual(query2, moviesQuery2)
+        XCTAssertEqual(query1!.results.count, moviesQuery1.results.count)
+        XCTAssertEqual(query2!.results.count, moviesQuery2.results.count)
+    }
+    
+    func test_rx_whenInsertMoviesQueries_shouldReturnRecentQueries() {
+        
+        // given
+        let dao = MoviesQueryDao(storage: storage)
+        
+        let moviesQuery1 = MoviesQuery(query: "Test Query 1", page: 1, totalPages: 10, results: [])
+        let moviesQuery2 = MoviesQuery(query: "Test Query 2", page: 1, totalPages: 10, results: [])
+        let moviesQuery3 = MoviesQuery(query: "Test Query 3", page: 1, totalPages: 10, results: [])
+        
+        
+        _ = try? dao.insert(moviesQuery1).toBlocking(timeout: 0.1).first()
+        _ = try? dao.insert(moviesQuery2).toBlocking(timeout: 0.1).first()
+        _ = try? dao.insert(moviesQuery3).toBlocking(timeout: 0.1).first()
+        
+        let queries = try? dao.recent(number: 2).toBlocking(timeout: 0.1).first()
+        
+        XCTAssertNotNil(queries, "Should get recent queries")
+        XCTAssertEqual(queries!.count, 2, "Should return 2 recent queries")
+        XCTAssertEqual(queries, [moviesQuery3, moviesQuery2])
+    }
 }

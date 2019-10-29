@@ -90,6 +90,9 @@
 		847442A5233C01F400496864 /* PosterImagesDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A4233C01F400496864 /* PosterImagesDao.swift */; };
 		847442A7233D61BE00496864 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847442A6233D61BE00496864 /* ContentView2.swift */; };
 		84B0B283236770A100D3E2BF /* PosterImagesDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0B282236770A100D3E2BF /* PosterImagesDaoTests.swift */; };
+		84B0B2862368DA0400D3E2BF /* INetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0B2852368DA0400D3E2BF /* INetworkService.swift */; };
+		84B0B28A2368DA8F00D3E2BF /* INetworkService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0B2892368DA8F00D3E2BF /* INetworkService+Rx.swift */; };
+		84B0B28D2368DDA400D3E2BF /* NetworkService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0B28C2368DDA400D3E2BF /* NetworkService+Rx.swift */; };
 		84B34F3923660EDD0024EBE5 /* MoviesQueryRealmDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B34F3823660EDD0024EBE5 /* MoviesQueryRealmDao+Rx.swift */; };
 		84B34F3B23661BF80024EBE5 /* PosterImagesRealmDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B34F3A23661BF80024EBE5 /* PosterImagesRealmDao.swift */; };
 		84B34F3D23661DBB0024EBE5 /* PosterImagesRealmDao+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B34F3C23661DBB0024EBE5 /* PosterImagesRealmDao+Rx.swift */; };
@@ -214,6 +217,9 @@
 		847442A4233C01F400496864 /* PosterImagesDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesDao.swift; sourceTree = "<group>"; };
 		847442A6233D61BE00496864 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		84B0B282236770A100D3E2BF /* PosterImagesDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesDaoTests.swift; sourceTree = "<group>"; };
+		84B0B2852368DA0400D3E2BF /* INetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkService.swift; sourceTree = "<group>"; };
+		84B0B2892368DA8F00D3E2BF /* INetworkService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "INetworkService+Rx.swift"; sourceTree = "<group>"; };
+		84B0B28C2368DDA400D3E2BF /* NetworkService+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService+Rx.swift"; sourceTree = "<group>"; };
 		84B34F3823660EDD0024EBE5 /* MoviesQueryRealmDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoviesQueryRealmDao+Rx.swift"; sourceTree = "<group>"; };
 		84B34F3A23661BF80024EBE5 /* PosterImagesRealmDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImagesRealmDao.swift; sourceTree = "<group>"; };
 		84B34F3C23661DBB0024EBE5 /* PosterImagesRealmDao+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PosterImagesRealmDao+Rx.swift"; sourceTree = "<group>"; };
@@ -461,6 +467,7 @@
 		8474420C232F66C700496864 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				84B0B2842368D9E500D3E2BF /* Interfaces */,
 				8474421E2330AEDD00496864 /* AFNetworking */,
 				8474421D23300FD100496864 /* Networking */,
 			);
@@ -487,13 +494,12 @@
 		8474421D23300FD100496864 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				84B0B28B2368DD8600D3E2BF /* Rx */,
 				84744213232F6AD400496864 /* NetworkService.swift */,
 				84744215232F6C1500496864 /* Endpoint.swift */,
 				84744217232F6E8300496864 /* NetworkConfiguration.swift */,
 				847442192330062F00496864 /* NetworkSession.swift */,
 				8474421B2330075100496864 /* NetworkLogger.swift */,
-				847442272332BD2200496864 /* IPromiseNetworkService.swift */,
-				847442292332BE0000496864 /* IJsonNetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -716,6 +722,41 @@
 				847442A6233D61BE00496864 /* ContentView2.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		84B0B2842368D9E500D3E2BF /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				84B0B2882368DA6E00D3E2BF /* Combine */,
+				84B0B2872368DA6900D3E2BF /* Rx */,
+				84B0B2852368DA0400D3E2BF /* INetworkService.swift */,
+				847442272332BD2200496864 /* IPromiseNetworkService.swift */,
+				847442292332BE0000496864 /* IJsonNetworkService.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		84B0B2872368DA6900D3E2BF /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				84B0B2892368DA8F00D3E2BF /* INetworkService+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		84B0B2882368DA6E00D3E2BF /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		84B0B28B2368DD8600D3E2BF /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				84B0B28C2368DDA400D3E2BF /* NetworkService+Rx.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		84B34F3E23661ECC0024EBE5 /* Rx */ = {
@@ -1007,6 +1048,7 @@
 				84B34F4223661F060024EBE5 /* MoviesDao+Rx.swift in Sources */,
 				8474428E2337E53000496864 /* MoviesQueryDao.swift in Sources */,
 				8417CB5123645E10006F8506 /* RealmDao.swift in Sources */,
+				84B0B28A2368DA8F00D3E2BF /* INetworkService+Rx.swift in Sources */,
 				8474427723367C8A00496864 /* Identifiable.swift in Sources */,
 				847441D6232F64E600496864 /* SceneDelegate.swift in Sources */,
 				8417CB672365AB3B006F8506 /* IMoviesQueryDao+Rx.swift in Sources */,
@@ -1030,6 +1072,7 @@
 				847442322332C65C00496864 /* Router.swift in Sources */,
 				847442282332BD2200496864 /* IPromiseNetworkService.swift in Sources */,
 				84B34F4423661F190024EBE5 /* MoviesQueryDao+Rx.swift in Sources */,
+				84B0B28D2368DDA400D3E2BF /* NetworkService+Rx.swift in Sources */,
 				8474426523362F7000496864 /* MoviesUserDefaultsDao.swift in Sources */,
 				847442222330B01C00496864 /* AuthRequestInterceptor.swift in Sources */,
 				8474424523335CE700496864 /* IMoviesDao.swift in Sources */,
@@ -1044,6 +1087,7 @@
 				8474426C2336608F00496864 /* MovieObject.swift in Sources */,
 				84B34F4023661EEC0024EBE5 /* CoreDataDao+Rx.swift in Sources */,
 				8474429D233B471200496864 /* PosterImage.swift in Sources */,
+				84B0B2862368DA0400D3E2BF /* INetworkService.swift in Sources */,
 				8474427523367BDC00496864 /* MoviesDao.swift in Sources */,
 				8417CB4D23645AFB006F8506 /* IRealmStorage.swift in Sources */,
 				8417CB5323658B32006F8506 /* RealmStorage.swift in Sources */,

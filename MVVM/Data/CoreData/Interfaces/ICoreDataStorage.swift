@@ -10,6 +10,8 @@ import CoreData
 
 public protocol ICoreDataStorage {
     
+    var isInMemoryStore : Bool { get }
+    
     var persistentContainer: NSPersistentContainer { get }
     
     var mainContext : NSManagedObjectContext { get }
@@ -21,6 +23,8 @@ public protocol ICoreDataStorage {
 }
 
 public extension ICoreDataStorage {
+    
+    var isInMemoryStore : Bool { return false }
     
     var mainContext : NSManagedObjectContext {
         return self.persistentContainer.viewContext

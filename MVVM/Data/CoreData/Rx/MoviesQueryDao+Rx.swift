@@ -19,8 +19,10 @@ extension MoviesQueryDao : IMoviesQueryDao_Rx {
         let request : NSFetchRequest<MoviesQueryObject> = MoviesQueryObject.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
             NSPredicate(format: "query = %@", query),
-            NSPredicate(format: "page = %@", page)
+            NSPredicate(format: "page = %d", page)
         ])
+        
+        request.sortDescriptors = self.sortDescriptors ?? [NSSortDescriptor(key: "id", ascending: true)]
         
         return self.storage.taskContext.rx.entities(fetchRequest: request)
             .map { objects -> MoviesQuery in
