@@ -10,7 +10,7 @@ import Foundation
 
 struct AppSettings {
     
-    static let shared = AppSettings()
+    static var shared = AppSettings()
     
     private init() {}
     

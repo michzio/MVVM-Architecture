@@ -8,6 +8,8 @@
 
 import Foundation
 
+import RxDataSources
+
 struct Movie {
         
     let id: Int
@@ -52,6 +54,13 @@ extension Movie : Identifiable {
     
     var _identifier: String {
         return "\(id)"
+    }
+}
+
+extension Movie : IdentifiableType {
+    
+    var identity: Int {
+        return id
     }
 }
 

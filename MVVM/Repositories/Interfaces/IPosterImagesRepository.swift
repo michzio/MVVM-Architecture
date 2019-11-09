@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol IPosterImaesRepository {
+protocol IPosterImagesRepository {
     
-    func image(with imagePath: String, width: Int) -> Observable<PosterImage>
+    func image(with imagePath: String, width: Int) -> Observable<PosterImage?>
 }

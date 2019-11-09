@@ -11,9 +11,9 @@ import Foundation
 
 public final class MoviesService {
     
-    private let networkService: INetworkService
+    internal let networkService: INetworkService & INetworkService_Rx
     
-    public init(networkService: INetworkService) {
+    public init(networkService: INetworkService & INetworkService_Rx) {
         self.networkService = networkService
     }
 }

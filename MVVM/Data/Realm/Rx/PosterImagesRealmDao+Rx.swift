@@ -43,4 +43,11 @@ extension PosterImagesRealmDao : IPosterImagesDao_Rx {
         }
     }
     
+    func load(imagePath: String, width: Int) -> Observable<PosterImage?> {
+        
+        // TODO:
+        return .just(nil)
+        
+    }
+    
 }

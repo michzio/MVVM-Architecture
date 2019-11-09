@@ -6,7 +6,7 @@ target 'MVVM' do
   use_frameworks!
 
   # Pods for MVVM
-  pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'Alamofire', '~> 5.0.0-rc.3' #'~> 4.8'
   pod 'SwiftyJSON', '~> 4.0'
   pod "PromiseKit", "~> 6.8"
   
@@ -15,10 +15,21 @@ target 'MVVM' do
   pod 'RxCocoa', '~> 5'
   
   pod 'RxCoreData'
+  # pod 'RxAlamofire', '~> 5.0' # not compatible with Alamofire 5
 
   # Realm
   pod 'RealmSwift'
   pod 'RxRealm'
+
+  # Data Source
+  pod 'RxDataSources'
+
+  pod 'Action' 
+  
+  # Dependency Injection
+  pod 'Swinject'
+  pod 'SwinjectAutoregistration'
+  pod 'SwinjectStoryboard'
 
   target 'MVVMTests' do
     inherit! :search_paths

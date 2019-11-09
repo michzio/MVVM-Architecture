@@ -241,5 +241,3 @@ class NetworkServiceTests: XCTestCase {
         wait(for: [expactation], timeout: 0.1)
     }
 }
-
-

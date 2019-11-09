@@ -20,7 +20,7 @@ final class PosterImagesRepository {
     }
 }
 
-extension PosterImagesRepository {
+extension PosterImagesRepository : IPosterImagesRepository {    
     
     func image(with imagePath: String, width: Int) -> Observable<PosterImage?> {
         
@@ -32,7 +32,7 @@ extension PosterImagesRepository {
             case .success(let posterImage):
                 subject.onNext(posterImage)
             default:
-                subject.onNext(nil)
+                subject.onError(DaoError.notFound)
             }
         }
         

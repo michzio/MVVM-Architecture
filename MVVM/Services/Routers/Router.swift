@@ -14,7 +14,14 @@ import Foundation
 // MARK: - Router
 public enum Router : AFRouter {
 
-    static let baseURL = ""
+    var baseURL : String {
+        switch self  {
+        case .moviePoster:
+            return AppSettings.shared.imagesBaseURL
+        default:
+            return AppSettings.shared.apiBaseURL
+        }
+    }
     
     case sample
     case movies(query: String, page: Int)
@@ -27,13 +34,11 @@ extension Router {
     public var path: String {
         switch self {
         case .sample:
-            return "/"
+            return ""
         case .movies:
-            return "/3/search/movie"
+            return "3/search/movie"
         case .moviePoster(let path, let width):
-            let sizes = [92, 185, 500, 780]
-            let availableWidth = sizes.sorted().first { width <= $0 } ?? sizes.last
-            return "t/p/w\(availableWidth!)\(path)"
+            return "t/p/w\(width)\(path)"
         }
     }
     
@@ -69,6 +74,8 @@ extension Router {
     
     public var queryParams: [String: Any] {
         switch self {
+        case .movies(let query, let page):
+            return ["query" : query, "page" : "\(page)"]
         default:
             return [:]
         }

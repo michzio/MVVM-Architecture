@@ -9,7 +9,13 @@
 import UIKit
 import SwiftUI
 
+import Swinject
+import SwinjectStoryboard
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    // MARK: - Dependency Injection
+    let dependencies : DIAppContainer = DIAppContainer.shared
 
     var window: UIWindow?
 
@@ -21,22 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        //let context = CoreDataStorage.shared.persistentContainer.viewContext
+       guard let _ = (scene as? UIWindowScene) else { return }
         
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView2()
-            /// SWIFT UI Test of environment objects
-            //.environment(\.managedObjectContext, context)
-            //.environmentObject(user)
-
-        // Use a UIHostingController as window root view controller.
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
-            self.window = window
-            window.makeKeyAndVisible()
-        }
+       setupUIKit(scene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -73,3 +66,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate {
+    
+    func setupSwiftUI(_ scene: UIScene) {
+        
+        //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        //let context = CoreDataStorage.shared.persistentContainer.viewContext
+               
+        // Create the SwiftUI view that provides the window contents.
+        let contentView = ContentView2()
+            /// SWIFT UI Test of environment objects
+            //.environment(\.managedObjectContext, context)
+            //.environmentObject(user)
+
+        // Use a UIHostingController as window root view controller.
+        guard let windowScene =  scene as? UIWindowScene else { return }
+            
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = UIHostingController(rootView: contentView)
+        self.window = window
+        
+        window.makeKeyAndVisible()
+    }
+}
+
+extension SceneDelegate {
+    
+    func setupUIKit(_ scene: UIScene) {
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        //let window = UIWindow(frame: UIScreen.main.bounds)
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = UINavigationController()
+        self.window = window
+    
+        // window.rootViewController = AppContainer.makeMoviesViewController()
+        let coordinator = dependencies.container.resolve(ISceneCoordinator.self)
+        coordinator?.transition(to: .movies, type: .root)
+        
+        window.makeKeyAndVisible()
+    }
+}

@@ -7,9 +7,12 @@
 //
 
 import Foundation
+
+import RxSwift
+
 @testable import MVVM
 
-struct NetworkSessionMock : INetworkSession, Cancellable {
+class NetworkSessionMock : INetworkSession, Cancellable {
     
     let data: Data?
     let response: HTTPURLResponse?
@@ -22,4 +25,32 @@ struct NetworkSessionMock : INetworkSession, Cancellable {
     }
     
     func doCancel() { }
+    
+    init(data: Data?, response: HTTPURLResponse?, error: Error?) {
+        self.data = data
+        self.response = response
+        self.error = error
+    }
+}
+
+extension Reactive where Base: NetworkSessionMock {
+    
+    func data(request: URLRequest) -> Observable<Data> {
+        
+        return Observable.create { (observer) -> Disposable in
+
+            guard let data = self.base.data else {
+                if let error = self.base.error {
+                    observer.onError(error)
+                } else {
+                    observer.onCompleted()
+                }
+                return Disposables.create()
+            }
+            observer.onNext(data)
+            observer.onCompleted()
+            
+            return Disposables.create()
+        }
+    }
 }

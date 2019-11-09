@@ -12,6 +12,7 @@ import RxSwift
 protocol IPosterImagesDao_Rx {
     
     func load(imagePath: String, width: Int) -> Observable<PosterImage>
+    func load(imagePath: String, width: Int) -> Observable<PosterImage?>
     
     // IDao_Rx
     func insert(_ e: PosterImage) -> Observable<PosterImage>

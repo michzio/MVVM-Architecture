@@ -13,8 +13,9 @@ public final class AFNetworkService {
     
     private let config: INetworkConfiguration
     private let session: Session
-    private let interceptor: RequestInterceptor?
-    private let decoder: JSONDecoder
+    
+    internal let interceptor: RequestInterceptor?
+    internal let decoder: JSONDecoder
          
     init(config: INetworkConfiguration,
          session: Session = Session.default,
@@ -114,6 +115,18 @@ extension AFNetworkService : INetworkService {
             queue.async { completion(.failure(error)) }
             return nil 
         }
+    }
+}
+
+// MARK: - Helpers
+extension AFNetworkService {
+    
+    internal func urlRequest(from endpoint: Requestable) throws -> URLRequest {
+        return try endpoint.urlRequest(with: config)
+    }
+    
+    internal var afSession : Session {
+        return self.session
     }
 }
 

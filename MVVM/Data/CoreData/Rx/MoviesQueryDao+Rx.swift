@@ -34,6 +34,26 @@ extension MoviesQueryDao : IMoviesQueryDao_Rx {
             }
     }
     
+    func load(query: String, page: Int) -> Observable<MoviesQuery?> {
+        
+        let request : NSFetchRequest<MoviesQueryObject> = MoviesQueryObject.fetchRequest()
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "query = %@", query),
+            NSPredicate(format: "page = %d", page)
+        ])
+        
+        request.sortDescriptors = self.sortDescriptors ?? [NSSortDescriptor(key: "id", ascending: true)]
+    
+        return self.storage.taskContext.rx.entities(fetchRequest: request)
+            .map { objects -> MoviesQuery? in
+                if let object = objects.first {
+                    return self.decode(object: object)
+                } else {
+                    return nil
+                }
+            }
+    }
+    
     func recent(number: Int) -> Observable<[MoviesQuery]> {
         
         let request : NSFetchRequest<MoviesQueryObject> = MoviesQueryObject.fetchRequest()

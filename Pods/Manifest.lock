@@ -1,5 +1,9 @@
 PODS:
-  - Alamofire (5.0.0-rc.2)
+  - Action (4.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
+  - Alamofire (5.0.0-rc.3)
+  - Differentiator (4.0.1)
   - PromiseKit (6.11.0):
     - PromiseKit/CorePromise (= 6.11.0)
     - PromiseKit/Foundation (= 6.11.0)
@@ -22,6 +26,10 @@ PODS:
   - RxCoreData (1.0.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRealm (1.0.0):
     - RealmSwift (~> 3.14)
     - RxSwift (~> 5.0)
@@ -31,48 +39,70 @@ PODS:
   - RxTest (5.0.0):
     - RxSwift (~> 5)
   - SwiftyJSON (4.3.0)
+  - Swinject (2.7.1)
+  - SwinjectAutoregistration (2.6.1):
+    - Swinject (~> 2.6)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.0.0-rc.2)
+  - Action
+  - Alamofire (~> 5.0.0-rc.3)
   - PromiseKit (~> 6.8)
   - RealmSwift
   - RxBlocking (~> 5)
   - RxCocoa (~> 5)
   - RxCoreData
+  - RxDataSources
   - RxRealm
   - RxSwift (~> 5)
   - RxTest (~> 5)
   - SwiftyJSON (~> 4.0)
+  - Swinject
+  - SwinjectAutoregistration
+  - SwinjectStoryboard
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Action
     - Alamofire
+    - Differentiator
     - PromiseKit
     - Realm
     - RealmSwift
     - RxBlocking
     - RxCocoa
     - RxCoreData
+    - RxDataSources
     - RxRealm
     - RxRelay
     - RxSwift
     - RxTest
     - SwiftyJSON
+    - Swinject
+    - SwinjectAutoregistration
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
-  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  Action: 0d14986aad0f1330aa27ce65d0cdeaacbb63d91c
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
   Realm: 8b2ca5bc6479a91f379b6b42b5922e396cd5ba5a
   RealmSwift: 1949ef26a279e1845bd51d591b9103adfcd121df
   RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxCoreData: 1ed5f83e80facccc90fc054eb7f39a44177de56a
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRealm: 1e81dcfca1fb50c3e9b3e1f8102bc875c5156a2e
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  SwinjectAutoregistration: d0de7e48db3601b8b130f2f84e5a8399e0224135
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 2cfc704f043eaccd673acf476a481daebeb681bf
+PODFILE CHECKSUM: e7096f9d2ba9eb0c95d439e5b38f4e6fdad1eea3
 
 COCOAPODS: 1.7.5

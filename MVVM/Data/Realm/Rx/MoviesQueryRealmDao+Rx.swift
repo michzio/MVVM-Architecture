@@ -42,6 +42,32 @@ extension MoviesQueryRealmDao : IMoviesQueryDao_Rx {
         }
     }
     
+    func load(query: String, page: Int) -> Observable<MoviesQuery?> {
+        
+        let result = withRealm("load") { realm -> MoviesQueryRealmObject in
+            
+            let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+                NSPredicate(format: "query = %@", query),
+                NSPredicate(format: "page = %@", page)
+            ])
+            
+            let objects = realm.objects(MoviesQueryRealmObject.self)
+                            .filter(predicate)
+            guard let object = objects.first else {
+                throw DaoError.notFound
+            }
+            
+            return object
+        }
+        
+        switch result {
+        case .success(let object):
+            return .just(self.decode(object: object))
+        case .failure:
+            return .just(nil)
+        }
+    }
+    
     func recent(number: Int) -> Observable<[MoviesQuery]> {
         
         let result = withRealm("recent") { realm -> Results<MoviesQueryRealmObject> in

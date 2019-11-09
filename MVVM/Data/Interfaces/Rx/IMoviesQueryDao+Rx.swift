@@ -12,6 +12,7 @@ import RxSwift
 protocol IMoviesQueryDao_Rx {
     
     func load(query: String, page: Int) -> Observable<MoviesQuery>
+    func load(query: String, page: Int) -> Observable<MoviesQuery?>
     func recent(number: Int) -> Observable<[MoviesQuery]>
     func sync(moviesQuery: MoviesQuery) -> Observable<MoviesQuery>
     

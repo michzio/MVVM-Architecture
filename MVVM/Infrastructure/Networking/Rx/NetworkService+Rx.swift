@@ -38,17 +38,17 @@ extension NetworkService : INetworkService_Rx {
         }
     }
     
-    public func string(with endpoint: Requestable, queue: DispatchQueue) -> Observable<String> {
+    public func string(with endpoint: Requestable) -> Observable<String> {
         
         return self.data(with: endpoint).map { String(data: $0, encoding:.utf8) ?? "" }
     }
     
-    public func json(with endpoint: Requestable, queue: DispatchQueue) -> Observable<Any> {
+    public func json(with endpoint: Requestable) -> Observable<Any> {
         
         return self.data(with: endpoint).map { try JSONSerialization.jsonObject(with: $0) }
     }
     
-    public func image(with endpoint: Requestable, queue: DispatchQueue) -> Observable<UIImage> {
+    public func image(with endpoint: Requestable) -> Observable<UIImage> {
         return self.data(with: endpoint).map { UIImage(data: $0) ?? UIImage() }
     }
 }

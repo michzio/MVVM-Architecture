@@ -18,7 +18,7 @@ extension PosterImageObject {
         
         let request = MovieObject.fetchRequest()
         request.predicate = NSPredicate(format: "posterPath = %@", e.path)
-            
+
         if let movie = (try? request.execute().first as? MovieObject) {
             self.movie = movie
         }

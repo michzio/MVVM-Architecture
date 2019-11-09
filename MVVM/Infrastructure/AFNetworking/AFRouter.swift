@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol AFRouter : Requestable, Encoder, URLRequestConvertible {
-    static var baseURL : String { get }
+    var baseURL : String { get }
 }
 
 // MARK: - Requestable
@@ -23,7 +23,14 @@ extension AFRouter {
             return try self.urlRequest(with: config)
          */
         
-        return try asURLRequest()
+        var urlRequest = try asURLRequest()
+        
+        config.headers.forEach { (key, value) in
+            urlRequest.addValue(value, forHTTPHeaderField: key)
+        }
+        urlRequest.url = urlRequest.url?.appendQueryParams(params: config.queryParams)
+        
+        return urlRequest
     }
 }
 
@@ -33,7 +40,7 @@ extension AFRouter {
     
     public func asURLRequest() throws -> URLRequest {
         
-        var baseUrlString = Self.baseURL
+        var baseUrlString = self.baseURL
         baseUrlString += (baseUrlString.last != "/") ? "/" : ""
         
         let urlString = isFullPath ? path : baseUrlString.appending(path)
